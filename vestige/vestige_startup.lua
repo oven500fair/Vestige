@@ -129,7 +129,7 @@ function main()
 	local block_packed_flint = registerBlock
 	(
 		"block_packed_flint", "Packed Flint", "textures/blocks/packed_flint.png",
-		BlockDefinition.new	(	{	hardness = 2.1,	resistance = 4,	sound = "gravel",	tool = EBlockTool.Shovel,	drop = "minecraft:flint",	dropMin = 4,	dropMax = 4,	}	)
+		BlockDefinition.new	(	{	hardness = .8,	resistance = 5,	sound = "gravel",	tool = EBlockTool.Shovel,	drop = "minecraft:flint",	}	)
 	)
 	local block_health_station = registerBlock
 	(
@@ -149,70 +149,69 @@ function main()
 	local plant_orchid = registerPlant
 	(
 		"plant_orchid", "Orchid", "textures/blocks/borderworld/orchid.png",
-		{	soil = {	"vestige:block_sleeping_sand", "vestige:block_borderstone", "minecraft:sand"	}	}
+		{	soil = {	"vestige:block_sleeping_sand", "vestige:block_borderstone", "minecraft:sand", "minecraft:grass_block"	}	}
 	)
 	
-	local tier_nether = registerItemTier
+	local tier_nethervice = registerItemTier
 	(
-		"tier_nether",	{	level = 3,	damage = 3,	uses = 328,	speed = 6,	ench = 18,	}
+		"tier_nethervice",	{	level = 3,	damage = 2,	uses = 990,	speed = 6,	ench = 14,	}
 	)
-	local tier_armor_nether = registerArmorMaterial
+	local tier_armor_nethervice = registerArmorMaterial
 	(
-		"tier_armor_nether",	{	durabilityMultiplier = 26, head = 2, torso = 6, legs = 5, feet = 2, ench = 9,	}
+		"tier_armor_nethervice",	{	durabilityMultiplier = 27, head = 2, torso = 6, legs = 5, feet = 2, ench = 9,	}
 	)
-	local nether_sword = registerItem
+	local nethervice_sword = registerItem
 	(
-		"nether_sword", "Nethervice Sword", "textures/tools/nether_tools1.png",
-		ItemDefinition.new	(	{	base = EBaseItem.Weapon,	customTier = tier_nether,	material = EItemMaterial.Iron,	maxStackSize = 1,	}	)
+		"nethervice_sword", "Nethervice Sword", "textures/tools/nethervice_tools1.png",
+		ItemDefinition.new	(	{	base = EBaseItem.Weapon,	customTier = tier_nethervice,	material = EItemMaterial.Iron,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
-	local nether_shovel = registerItem
+	local nethervice_shovel = registerItem
 	(
-		"nether_shovel", "Nethervice Shovel", "textures/tools/nether_tools2.png",
-		ItemDefinition.new	(	{	base = EBaseItem.Shovel,	customTier = tier_nether,	material = EItemMaterial.Iron,	maxStackSize = 1,	}	)
+		"nethervice_shovel", "Nethervice Shovel", "textures/tools/nethervice_tools2.png",
+		ItemDefinition.new	(	{	base = EBaseItem.Shovel,	customTier = tier_nethervice,	material = EItemMaterial.Iron,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
-	local nether_pickaxe = registerItem
+	local nethervice_pickaxe = registerItem
 	(
-		"nether_pickaxe", "Nethervice Pickaxe", "textures/tools/nether_tools3.png",
-		ItemDefinition.new	(	{	base = EBaseItem.Pickaxe,	customTier = tier_nether,	material = EItemMaterial.Iron,	maxStackSize = 1,	}	)
+		"nethervice_pickaxe", "Nethervice Pickaxe", "textures/tools/nethervice_tools3.png",
+		ItemDefinition.new	(	{	base = EBaseItem.Pickaxe,	customTier = tier_nethervice,	material = EItemMaterial.Iron,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
-	local nether_axe = registerItem
+	local nethervice_axe = registerItem
 	(
-		"nether_axe", "Nethervice Axe", "textures/tools/nether_tools4.png",
-		ItemDefinition.new	(	{	base = EBaseItem.Hatchet,	customTier = tier_nether,	material = EItemMaterial.Iron,	maxStackSize = 1,	}	)
+		"nethervice_axe", "Nethervice Axe", "textures/tools/nethervice_tools4.png",
+		ItemDefinition.new	(	{	base = EBaseItem.Hatchet,	customTier = tier_nethervice,	material = EItemMaterial.Iron,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
-	local nether_hoe = registerItem
+	local nethervice_hoe = registerItem
 	(
-		"nether_hoe", "Nethervice Hoe", "textures/tools/nether_tools5.png",
-		ItemDefinition.new	(	{	base = EBaseItem.Hoe,	customTier = tier_nether,	material = EItemMaterial.Iron,	maxStackSize = 1,	}	)
+		"nethervice_hoe", "Nethervice Hoe", "textures/tools/nethervice_tools5.png",
+		ItemDefinition.new	(	{	base = EBaseItem.Hoe,	customTier = tier_nethervice,	material = EItemMaterial.Iron,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
-	local nether_helmet = registerItem
+	local nethervice_helmet = registerItem
 	(
-		"nether_helmet", "Nethervice Helmet", "textures/armor/nether_armor1.png",
-		ItemDefinition.new	(	{	base = EBaseItem.Helmet,	armorSet = "tier_armor_nether",	customArmorMaterial = tier_armor_nether,	maxStackSize = 1,	}	)
+		"nethervice_helmet", "Nethervice Helmet", "textures/armor/nethervice_armor1.png",
+		ItemDefinition.new	(	{	base = EBaseItem.Helmet,	armorSet = "tier_armor_nethervice",	customArmorMaterial = tier_armor_nethervice,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
-	local nether_chestplate = registerItem
+	local nethervice_chestplate = registerItem
 	(
-		"nether_chestplate", "Nethervice Chestplate", "textures/armor/nether_armor2.png",
-		ItemDefinition.new	(	{	base = EBaseItem.Chestplate,	armorSet = "tier_armor_nether",	customArmorMaterial = tier_armor_nether,	maxStackSize = 1,	}	)
+		"nethervice_chestplate", "Nethervice Chestplate", "textures/armor/nethervice_armor2.png",
+		ItemDefinition.new	(	{	base = EBaseItem.Chestplate,	armorSet = "tier_armor_nethervice",	customArmorMaterial = tier_armor_nethervice,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
-	local nether_leggings = registerItem
+	local nethervice_leggings = registerItem
 	(
-		"nether_leggings", "Nethervice Leggings", "textures/armor/nether_armor3.png",
-		ItemDefinition.new	(	{	base = EBaseItem.Leggings,	armorSet = "tier_armor_nether",	customArmorMaterial = tier_armor_nether,	maxStackSize = 1,	}	)
+		"nethervice_leggings", "Nethervice Leggings", "textures/armor/nethervice_armor3.png",
+		ItemDefinition.new	(	{	base = EBaseItem.Leggings,	armorSet = "tier_armor_nethervice",	customArmorMaterial = tier_armor_nethervice,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
-	local nether_boots = registerItem
+	local nethervice_boots = registerItem
 	(
-		"nether_boots", "Nethervice Boots", "textures/armor/nether_armor4.png",
-		ItemDefinition.new	(	{	base = EBaseItem.Boots,	armorSet = "tier_armor_nether",	customArmorMaterial = tier_armor_nether,	maxStackSize = 1,	}	)
+		"nethervice_boots", "Nethervice Boots", "textures/armor/nethervice_armor4.png",
+		ItemDefinition.new	(	{	base = EBaseItem.Boots,	armorSet = "tier_armor_nethervice",	customArmorMaterial = tier_armor_nethervice,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
-	
-		local tier_topaz = registerItemTier
+	local tier_topaz = registerItemTier
 	(
-		"tier_topaz",	{	level = 3,	damage = 3,	uses = 328,	speed = 12,	ench = 18,	}
+		"tier_topaz",	{	level = 3,	damage = 3,	uses = 1280,	speed = 7,	ench = 14,	}
 	)
 	local tier_armor_topaz = registerArmorMaterial
 	(
-		"tier_armor_topaz",	{	durabilityMultiplier = 26, head = 4, torso = 5, legs = 5, feet = 4, ench = 20,	}
+		"tier_armor_topaz",	{	durabilityMultiplier = 26, head = 4, torso = 5, legs = 5, feet = 4, ench = 8,	}
 	)
 	local topaz_sword = registerItem
 	(
@@ -267,12 +266,17 @@ function main()
 	local topaz = registerItem
 	(
 		"topaz", "Topaz", "textures/items/topaz",
-		ItemDefinition.new	(	{	base = EBaseItem.Ingot,	material = EItemMaterial.Iron	}	)
+		ItemDefinition.new	(	{	base = EBaseItem.Ingot,	material = EItemMaterial.Diamond	}	)
 	)
 	local uranium = registerItem
 	(
 		"uranium", "Uranium", "textures/items/uranium",
-		ItemDefinition.new	(	{	base = EBaseItem.Ingot,	material = EItemMaterial.Iron	}	)
+		ItemDefinition.new	(	{	base = EBaseItem.Ingot,	material = EItemMaterial.Redstone	}	)
+	)
+	local depleted_uranium = registerItem
+	(
+		"depleted_uranium", "Depleted Uranium", "textures/items/uranium",
+		ItemDefinition.new	(	{	base = EBaseItem.Ingot,	material = EItemMaterial.Redstone	}	)
 	)
 	local green_apple = registerItem
 	(
@@ -294,71 +298,79 @@ function main()
         "smelt_borderstone_coal",
 		"vestige:block_borderstone_coal",
 		"minecraft:coal",
-		{ count = 1, xp = 5 }
+		{ count = 1, xp = .1 }
     )
 	registerSmeltingRecipe
     (
         "smelt_borderstone_iron",
 		"vestige:block_borderstone_iron",
 		"minecraft:iron_ingot",
-		{ count = 1, xp = 8 }
+		{ count = 1, xp = .7 }
     )
 	registerSmeltingRecipe
     (
         "smelt_borderstone_gold",
 		"vestige:block_borderstone_gold",
 		"minecraft:gold_ingot",
-		{ count = 1, xp = 10 }
+		{ count = 1, xp = 1 }
     )
 	registerSmeltingRecipe
     (
         "smelt_borderstone_diamond",
 		"vestige:block_borderstone_diamond",
 		"minecraft:diamond",
-		{ count = 1, xp = 12 }
+		{ count = 1, xp = 1 }
     )
 	registerSmeltingRecipe
     (
         "smelt_borderstone_emerald",
 		"vestige:block_borderstone_emerald",
 		"minecraft:emerald",
-		{ count = 1, xp = 12 }
+		{ count = 1, xp = 1 }
     )
 	registerSmeltingRecipe
     (
         "smelt_netherrack_iron",
 		"vestige:block_netherrack_iron",
 		"minecraft:iron_ingot",
-		{ count = 1, xp = 8 }
+		{ count = 1, xp = .7 }
     )
 	registerSmeltingRecipe
     (
         "smelt_uranium_ore",
 		"vestige:block_uranium_ore",
 		"vestige:uranium",
-		{ count = 1, xp = 7 }
+		{ count = 1, xp = 4 }
+    )
+	registerSmeltingRecipe
+    (
+        "smelt_uranium",
+		"vestige:uranium",
+		"vestige:depleted_uranium",
+		{ count = 1, xp = 6 }
     )
 	registerSmeltingRecipe
     (
         "smelt_redstone_smooth",
 		"vestige:block_redstone_bricks",
 		"vestige:block_redstone_smooth",
-		{ count = 1, xp = .2 }
+		{ count = 1, xp = .1 }
     )
 	registerSmeltingRecipe
     (
         "smelt_sleeping_sandstone_smooth",
 		"vestige:block_sleeping_sandstone",
 		"vestige:block_sleeping_sandstone_smooth",
-		{ count = 1, xp = .2 }
+		{ count = 1, xp = .35 }
     )
 	registerSmeltingRecipe
     (
         "smelt_sleeping_sand",
 		"vestige:block_sleeping_sand",
 		"vestige:block_sleeping_glass",
-		{ count = 1, xp = .4 }
+		{ count = 1, xp = .35 }
     )
+	
 	registerShapedRecipe
 	(
 		"recipe_enderpearl",
@@ -473,6 +485,16 @@ function main()
 		"vestige:topaz",
 		{count = 9, group = ERecipeGroup.Decoration}
 	)
+	registerShapelessRecipe
+	(
+		"recipe_depleted_uranium",
+		{
+			"vestige:depleted_uranium",
+			"minecraft:redstone"
+		},
+		"vestige:uranium",
+		{count = 1, group = ERecipeGroup.Decoration}
+	)
 	registerShapedRecipe
 	(
 		"recipe_apple_leaves",
@@ -542,110 +564,110 @@ function main()
 	)
 	registerShapedRecipe
 	(
-		"recipe_nether_sword",
-		{
-			" n ",
-			"gng",
-			" f "
-		},
-		{n = "vestige:block_nethervice", f = "minecraft:flint", g = "minecraft:gold_ingot"},
-		"vestige:nether_sword",
-		{count = 1, group = ERecipeGroup.Tool}
-	)
-	registerShapedRecipe
-	(
-		"recipe_nether_shovel",
-		{
-			"gng",
-			" f ",
-			" f "
-		},
-		{n = "vestige:block_nethervice", f = "minecraft:flint", g = "minecraft:gold_ingot"},
-		"vestige:nether_shovel",
-		{count = 1, group = ERecipeGroup.Tool}
-	)
-	registerShapedRecipe
-	(
-		"recipe_nether_pickaxe",
+		"recipe_nethervice_sword",
 		{
 			"nnn",
-			"gfg",
-			" f "
+			"nin",
+			"nnn"
 		},
-		{n = "vestige:block_nethervice", f = "minecraft:flint", g = "minecraft:gold_ingot"},
-		"vestige:nether_pickaxe",
+		{n = "vestige:block_nethervice", i = "minecraft:iron_sword"},
+		"vestige:nethervice_sword",
 		{count = 1, group = ERecipeGroup.Tool}
 	)
 	registerShapedRecipe
 	(
-		"recipe_nether_axe",
+		"recipe_nethervice_shovel",
 		{
-			"gnn",
-			" fn",
-			" fg"
+			"nnn",
+			"nin",
+			"nnn"
 		},
-		{n = "vestige:block_nethervice", f = "minecraft:flint", g = "minecraft:gold_ingot"},
-		"vestige:nether_axe",
+		{n = "vestige:block_nethervice", i = "minecraft:iron_shovel"},
+		"vestige:nethervice_shovel",
 		{count = 1, group = ERecipeGroup.Tool}
 	)
 	registerShapedRecipe
 	(
-		"recipe_nether_hoe",
+		"recipe_nethervice_pickaxe",
 		{
-			" nn",
-			" fg",
-			" f "
+			"nnn",
+			"nin",
+			"nnn"
 		},
-		{n = "vestige:block_nethervice", f = "minecraft:flint", g = "minecraft:gold_ingot"},
-		"vestige:nether_hoe",
+		{n = "vestige:block_nethervice", i = "minecraft:iron_pickaxe"},
+		"vestige:nethervice_pickaxe",
 		{count = 1, group = ERecipeGroup.Tool}
 	)
 	registerShapedRecipe
 	(
-		"recipe_nether_helmet",
+		"recipe_nethervice_axe",
+		{
+			"nnn",
+			"nin",
+			"nnn"
+		},
+		{n = "vestige:block_nethervice", i = "minecraft:iron_axe"},
+		"vestige:nethervice_axe",
+		{count = 1, group = ERecipeGroup.Tool}
+	)
+	registerShapedRecipe
+	(
+		"recipe_nethervice_hoe",
+		{
+			"nnn",
+			"nin",
+			"nnn"
+		},
+		{n = "vestige:block_nethervice", i = "minecraft:iron_hoe"},
+		"vestige:nethervice_hoe",
+		{count = 1, group = ERecipeGroup.Tool}
+	)
+	registerShapedRecipe
+	(
+		"recipe_nethervice_helmet",
 		{
 			"nnn",
 			"nin",
 			"   "
 		},
 		{n = "vestige:block_nethervice", i = "minecraft:iron_helmet"},
-		"vestige:nether_helmet",
+		"vestige:nethervice_helmet",
 		{count = 1, group = ERecipeGroup.Armour}
 	)
 	registerShapedRecipe
 	(
-		"recipe_nether_chestplate",
+		"recipe_nethervice_chestplate",
 		{
 			"nin",
 			"nnn",
 			"nnn"
 		},
 		{n = "vestige:block_nethervice", i = "minecraft:iron_chestplate"},
-		"vestige:nether_chestplate",
+		"vestige:nethervice_chestplate",
 		{count = 1, group = ERecipeGroup.Armour}
 	)
 	registerShapedRecipe
 	(
-		"recipe_nether_leggings",
+		"recipe_nethervice_leggings",
 		{
 			"nnn",
 			"nin",
 			"n n"
 		},
 		{n = "vestige:block_nethervice", i = "minecraft:iron_leggings"},
-		"vestige:nether_leggings",
+		"vestige:nethervice_leggings",
 		{count = 1, group = ERecipeGroup.Armour}
 	)
 	registerShapedRecipe
 	(
-		"recipe_nether_boots",
+		"recipe_nethervice_boots",
 		{
 			"   ",
 			"nin",
 			"n n"
 		},
 		{n = "vestige:block_nethervice", i = "minecraft:iron_boots"},
-		"vestige:nether_boots",
+		"vestige:nethervice_boots",
 		{count = 1, group = ERecipeGroup.Armour}
 	)
 	
@@ -665,7 +687,7 @@ function main()
 			downfall = .93,
 			size = 160,
 			scale = 1.2,
-			frequency = 5,
+			frequency = 4,
 			depth = 0.33,
 			grassCount = 2,
 			flowerCount = 0,

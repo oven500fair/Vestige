@@ -47,7 +47,7 @@ function main()
 			size = 15,
 			yMin = 5,
 			yMax = 72,
-			count = 16,
+			count = 18,
 			dimension = 0,
 		}
 	)
@@ -70,10 +70,10 @@ function main()
 		"vestige:block_packed_flint",
 		{
 			target = "vestige:block_borderstone",
-			size = 17,
+			size = 18,
 			yMin = 5,
 			yMax = 72,
-			count = 20,
+			count = 22,
 			dimension = 4,
 		}
 	)
@@ -138,7 +138,7 @@ function main()
 			size = 13,
 			yMin = 16,
 			yMax = 80,
-			count = 28,
+			count = 30,
 			dimension = 4,
 		}
 	)
@@ -190,7 +190,7 @@ function main()
 			size = 17,
 			yMin = 1,
 			yMax = 80,
-			count = 18,
+			count = 19,
 			dimension = 5,
 		}
 	)
@@ -200,10 +200,10 @@ function main()
 		"vestige:block_borderstone_iron",
 		{
 			target = "vestige:block_borderstone",
-			size = 13,
+			size = 14,
 			yMin = 6,
 			yMax = 72,
-			count = 27,
+			count = 30,
 			dimension = 5,
 		}
 	)
@@ -229,7 +229,7 @@ function main()
 			size = 9,
 			yMin = 1,
 			yMax = 26,
-			count = 6,
+			count = 7,
 			dimension = 5,
 		}
 	)
