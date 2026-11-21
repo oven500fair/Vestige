@@ -5,9 +5,9 @@ function main()
 		"vestige:block_topaz_formation",
 		{
 			target = "minecraft:stone",
-			size = 10,
+			size = 9,
 			yMin = 5,
-			yMax = 24,
+			yMax = 26,
 			count = 4,
 			dimension = 0,
 		}
@@ -21,7 +21,7 @@ function main()
 			size = 5,
 			yMin = 5,
 			yMax = 35,
-			count = 9,
+			count = 8,
 			dimension = 0,
 		}
 	)
@@ -45,9 +45,9 @@ function main()
 		{
 			target = "minecraft:stone",
 			size = 15,
-			yMin = 5,
-			yMax = 100,
-			count = 18,
+			yMin = 45,
+			yMax = 85,
+			count = 15,
 			dimension = 0,
 		}
 	)
@@ -57,10 +57,10 @@ function main()
 		"vestige:block_packed_flint",
 		{
 			target = "minecraft:netherrack",
-			size = 16,
-			yMin = 40,
-			yMax = 120,
-			count = 18,
+			size = 20,
+			yMin = 100,
+			yMax = 124,
+			count = 7,
 			dimension = -1,
 		}
 	)
@@ -123,9 +123,9 @@ function main()
 		{
 			target = "minecraft:netherrack",
 			size = 12,
-			yMin = 0,
-			yMax = 112,
-			count = 26,
+			yMin = 2,
+			yMax = 120,
+			count = 29,
 			dimension = -1,
 		}
 	)
@@ -308,6 +308,30 @@ function main()
 			leaves = "minecraft:oak_leaves",
 		}
 	)
+	registerTreeFeature
+	(
+		"ft_winterland_tree",
+		"oak",
+		{
+			biome = "vestige:biome_winterland",
+			count = .3,
+			height = 4,
+			trunk = "minecraft:oak_log",
+			leaves = "minecraft:oak_leaves",
+		}
+	)
+	registerTreeFeature
+	(
+		"ft_winterland_holiday_tree",
+		"oak",
+		{
+			biome = "vestige:biome_winterland",
+			count = 4,
+			height = 4,
+			trunk = "vestige:block_winter_log",
+			leaves = "vestige:block_winter_leaves",
+		}
+	)
 	registerEvent
 	(
 		"ItemCompleteUseEvent", function(event)
@@ -368,5 +392,4 @@ function main()
 			end
 		end
 	)
-	
 end

@@ -41,6 +41,21 @@ function main()
 		"block_uranium_block", "Block of Uranium", "textures/blocks/ores/uranium_block.png",
 		BlockDefinition.new	(	{	hardness = 4,	resistance = 5,	sound = "stone",	tool = EBlockTool.Pickaxe,	}	)
 	)
+	local block_winter_wood = registerBlock
+	(
+		"block_winter_wood", "Winter Wood", "textures/blocks/winter_wood.png",
+		BlockDefinition.new	(	{	hardness = 1.2,	resistance = 2,	sound = "wood",	tool = EBlockTool.Hatchet,	}	)
+	)
+	local block_winter_log = registerBlock
+	(
+		"block_winter_log", "Winter Log", "textures/blocks/winter_log1.png",
+		BlockDefinition.new	(	{	hardness = 1.2,	resistance = 2,	sound = "wood",	tool = EBlockTool.Hatchet, topTexture = "textures/blocks/winter_log2.png", bottomTexture = "textures/blocks/winter_log2.png",	}	)
+	)
+	local block_winter_leaves = registerBlock
+	(
+		"block_winter_leaves", "Winter Leaves", "textures/blocks/winter_leaves.png",
+		BlockDefinition.new	(	{	hardness = .15,	resistance = 0,	sound = "grass",	tool = EBlockTool.Hoe,	transparent = true,	}	)
+	)
 	local block_apple_leaves = registerBlock
 	(
 		"block_apple_leaves", "Apple Leaves", "textures/blocks/saplings/apple_leaves.png",
@@ -695,11 +710,36 @@ function main()
 			rain = true,
 			temperature = .7,
 			downfall = .93,
-			size = 160,
+			size = 192,
 			scale = 1.2,
-			frequency = 4,
+			frequency = 3,
 			depth = 0.33,
 			grassCount = 2,
+			flowerCount = 0,
+			surface = "minecraft:grass_block",
+			filler = "minecraft:dirt",
+			tallGrass = "minecraft:tallgrass",
+		}
+	)
+	local biome_winterland = registerBiome
+	(
+		"biome_winterland",
+		{
+			name = "Winter Land",
+			isOverworldBiome = true,
+			grassColor = 0xC1E6E1,
+			foliageColor = 0xAED4CC,
+			waterColor = 0x4F8EE0,
+			skyColor = 0x75BFFF,
+			snow = true,
+			rain = true,
+			temperature = -.67,
+			downfall = .22,
+			size = 384,
+			scale = .2,
+			frequency = 60,
+			depth = 0.33,
+			grassCount = 1,
 			flowerCount = 0,
 			surface = "minecraft:grass_block",
 			filler = "minecraft:dirt",
