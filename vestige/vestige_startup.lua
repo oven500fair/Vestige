@@ -23,22 +23,22 @@ function main()
 	)
 	local block_topaz_formation = registerBlock
 	(
-		"block_topaz_formation", "Topaz Formation", "textures/blocks/topaz_formation.png",
+		"block_topaz_formation", "Topaz Formation", "textures/blocks/ores/topaz_formation.png",
 		BlockDefinition.new	(	{	hardness = 4,	resistance = 5,	sound = "glass",	tool = EBlockTool.Pickaxe,	drop = "vestige:topaz",	}	)
 	)
 	local block_topaz_block = registerBlock
 	(
-		"block_topaz_block", "Block of Topaz", "textures/blocks/topaz_block.png",
+		"block_topaz_block", "Block of Topaz", "textures/blocks/ores/topaz_block.png",
 		BlockDefinition.new	(	{	hardness = 4,	resistance = 5,	sound = "glass",	tool = EBlockTool.Pickaxe,	drop = "vestige:topaz",	}	)
 	)
 	local block_uranium_ore = registerBlock
 	(
-		"block_uranium_ore", "Uranium Ore", "textures/blocks/uranium_ore.png",
+		"block_uranium_ore", "Uranium Ore", "textures/blocks/ores/uranium_ore.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 5,	sound = "stone",	tool = EBlockTool.Pickaxe,	}	)
 	)
 	local block_uranium_block = registerBlock
 	(
-		"block_uranium_block", "Block of Uranium", "textures/blocks/uranium_block.png",
+		"block_uranium_block", "Block of Uranium", "textures/blocks/ores/uranium_block.png",
 		BlockDefinition.new	(	{	hardness = 4,	resistance = 5,	sound = "stone",	tool = EBlockTool.Pickaxe,	}	)
 	)
 	local block_apple_leaves = registerBlock
@@ -50,6 +50,11 @@ function main()
 	(
 		"block_green_apple_leaves", "Green Apple Leaves", "textures/blocks/saplings/green_apple_leaves.png",
 		BlockDefinition.new	(	{	hardness = .15,	resistance = 0,	sound = "grass",	tool = EBlockTool.Hoe,	drop = "vestige:green_apple",	dropMin = 1,	dropMax = 4,	transparent = true,	}	)
+	)
+	local block_enchanted_dirt = registerBlock
+	(
+		"block_enchanted_dirt", "Enchanted Dirt", "textures/blocks/borderworld/enchanted_dirt.png",
+		BlockDefinition.new	(	{	hardness = .375,	resistance = 1,	sound = "grass",	tool = EBlockTool.Shovel,	}	)
 	)
 	local block_sleeping_sand = registerBlock
 	(
@@ -118,7 +123,7 @@ function main()
 	)
 	local block_netherrack_iron = registerBlock
 	(
-		"block_netherrack_iron", "Netherrack Iron", "textures/blocks/netherrack_iron.png",
+		"block_netherrack_iron", "Netherrack Iron", "textures/blocks/ores/netherrack_iron.png",
 		BlockDefinition.new	(	{	hardness = .85,	resistance = 25,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local block_blazing_bricks = registerBlock
@@ -149,6 +154,11 @@ function main()
 	local plant_orchid = registerPlant
 	(
 		"plant_orchid", "Orchid", "textures/blocks/borderworld/orchid.png",
+		{	soil = {	"vestige:block_sleeping_sand", "vestige:block_borderstone", "minecraft:sand", "minecraft:grass_block"	}	}
+	)
+	local plant_spikebulb = registerPlant
+	(
+		"plant_spikebulb", "Spikebulb", "textures/blocks/borderworld/spikebulb.png",
 		{	soil = {	"vestige:block_sleeping_sand", "vestige:block_borderstone", "minecraft:sand", "minecraft:grass_block"	}	}
 	)
 	
@@ -726,15 +736,19 @@ function main()
 		"dimension_borderworld",
 		{
 			slot = 5,
-			spawn = { 0, 75, 0 },
-			mayRespawn = false,
+			spawn = { 0, 110, 0 },
+			mayRespawn = true,
 			natural = true,
 			generator = "surface",
 			biome = "vestige:biome_borderworld",
 			xzSize = 64,
 			seaLevel = 77,
+			--ceilingMargin = 132,
+			--hasCeiling = true,
+			--ultraWarm = true,
 			terrain =
 			{
+				--baseDepth = 2,
 				soilDepth = 10,
 				surface = "vestige:block_sleeping_sand",
 				filler = "vestige:block_sleeping_sand",

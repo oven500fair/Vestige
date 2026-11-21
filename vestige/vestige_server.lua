@@ -46,7 +46,7 @@ function main()
 			target = "minecraft:stone",
 			size = 15,
 			yMin = 5,
-			yMax = 72,
+			yMax = 100,
 			count = 18,
 			dimension = 0,
 		}
@@ -58,8 +58,8 @@ function main()
 		{
 			target = "minecraft:netherrack",
 			size = 16,
-			yMin = 5,
-			yMax = 72,
+			yMin = 40,
+			yMax = 120,
 			count = 18,
 			dimension = -1,
 		}
@@ -153,6 +153,19 @@ function main()
 			yMax = 112,
 			count = 8,
 			dimension = -1,
+		}
+	)
+	registerOreFeature
+	(
+		"ft_spikebulb_generation",
+		"vestige:plant_spikebulb",
+		{
+			target = "vestige:plant_orchid",
+			size = 19,
+			yMin = 94,
+			yMax = 110,
+			count = 19,
+			dimension = 5,
 		}
 	)
 	registerOreFeature
