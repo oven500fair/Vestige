@@ -350,7 +350,7 @@ function main()
 	registerEvent
 	(
 		"ItemTickEvent", function(event)
-			if event.slot == 36 and not event.player:hasEffect(Effect.FireResistance) and getIdFromString("vestige:nether_boots") == event.item.id then
+			if event.slot == 36 and not event.player:hasEffect(Effect.FireResistance) and getIdFromString("vestige:nethervice_boots") == event.item.id then
 				event.player:addEffect(Effect.FireResistance, 100, 0)
 			end
 		end
@@ -358,7 +358,7 @@ function main()
 	registerEvent
 	(
 		"ItemTickEvent", function(event)
-			if event.slot == 37 and not event.player:hasEffect(Effect.FireResistance) and getIdFromString("vestige:nether_leggings") == event.item.id then
+			if event.slot == 37 and not event.player:hasEffect(Effect.FireResistance) and getIdFromString("vestige:nethervice_leggings") == event.item.id then
 				event.player:addEffect(Effect.FireResistance, 100, 0)
 			end
 		end
@@ -366,7 +366,7 @@ function main()
 	registerEvent
 	(
 		"ItemTickEvent", function(event)
-			if event.slot == 38 and not event.player:hasEffect(Effect.FireResistance) and getIdFromString("vestige:nether_chestplate") == event.item.id then
+			if event.slot == 38 and not event.player:hasEffect(Effect.FireResistance) and getIdFromString("vestige:nethervice_chestplate") == event.item.id then
 				event.player:addEffect(Effect.FireResistance, 100, 0)
 			end
 		end
@@ -374,7 +374,7 @@ function main()
 	registerEvent
 	(
 		"ItemTickEvent", function(event)
-			if event.slot == 39 and not event.player:hasEffect(Effect.FireResistance) and getIdFromString("vestige:nether_helmet") == event.item.id then
+			if event.slot == 39 and not event.player:hasEffect(Effect.FireResistance) and getIdFromString("vestige:nethervice_helmet") == event.item.id then
 				event.player:addEffect(Effect.FireResistance, 100, 0)
 			end
 		end
