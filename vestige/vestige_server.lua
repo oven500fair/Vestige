@@ -7,20 +7,7 @@ function main()
 			target = "minecraft:stone",
 			size = 9,
 			yMin = 5,
-			yMax = 26,
-			count = 4,
-			dimension = 0,
-		}
-	)
-	registerOreFeature
-	(
-		"ft_topaz_small_generation",
-		"vestige:block_topaz_formation",
-		{
-			target = "minecraft:stone",
-			size = 5,
-			yMin = 5,
-			yMax = 35,
+			yMax = 32,
 			count = 8,
 			dimension = 0,
 		}
@@ -31,7 +18,7 @@ function main()
 		"vestige:block_topaz_formation",
 		{
 			target = "minecraft:stone",
-			size = 15,
+			size = 13,
 			yMin = 5,
 			yMax = 14,
 			count = 2,
