@@ -132,7 +132,7 @@ function main()
 	registerOreFeature
 	(
 		"ft_blaze_bricks_generation",
-		"vestige:block_blazing_bricks",
+		"vestige:block_blazing_brick",
 		{
 			target = "minecraft:nether_brick",
 			size = 46,
