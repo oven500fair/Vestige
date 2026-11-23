@@ -1,26 +1,41 @@
 function main()
+	local ft_spikebulb_plant = registerFeature
+	(
+		"ft_spikebulb_plant",
+		{
+			biomes = {	"vestige:borderworld_biome"	},
+			dimensions  = {	"vestige:borderworld"	},
+			count = 4,
+			chance = 1,
+			placement = {	mode = "surface",	ground = {	"vestige:sleeping_sand"	}	},
+			place = function(world)
+				local spikebulb = world:block("vestige:spikebulb")
+				world:set(0, 0, 0, spikebulb)
+			end
+		}
+	)
 	local ft_winter_tree = registerFeature
     (
         "ft_winter_tree",
         {
-            biomes = { "vestige:biome_winterland" },			-- The biomes to generate it in
-            dimensions = { "minecraft:overworld" },			-- Extra dimensions param "just in case"
-            count = 2,									-- Average count per chunk
-            chance = 0.4,								-- Placement chance
+            biomes = { "vestige:winterland" },
+            dimensions = { "minecraft:overworld" },
+            count = 2,
+            chance = 0.4,
             placement =
             {
-                mode = "surface",						-- surface, range, fixed
-				--min = 0,								-- Use both of these for range, only min is required for fixed
+                mode = "surface",
+				--min = 0,
 				--max = 0,
-                ground = { "minecraft:grass_block" }	-- Valid placement blocks
+                ground = { "minecraft:grass_block" }
             },
             place = function(world)
-                local logTile = world:block("vestige:block_winter_log")
-                local leafTile = world:block("vestige:block_winter_leaves")
+                local logTile = world:block("vestige:winter_log")
+                local leafTile = world:block("vestige:winter_leaves")
                 local soilTile = world:block("minecraft:dirt")
                 if logTile <= 0 or leafTile <= 0 or soilTile <= 0 then return false end
 
-                local height = world:randomInt(7, 12)
+                local height = world:randomInt(7, 9)
 				local heightVariance = world:randomInt(1, 2)
 				local flatVariance = world:randomInt(1, 2)
 				
@@ -65,7 +80,7 @@ function main()
 	registerOreFeature
 	(
 		"ft_topaz_generation",
-		"vestige:block_topaz_formation",
+		"vestige:topaz_formation",
 		{
 			target = "minecraft:stone",
 			size = 9,
@@ -78,7 +93,7 @@ function main()
 	registerOreFeature
 	(
 		"ft_topaz_big_generation",
-		"vestige:block_topaz_formation",
+		"vestige:topaz_formation",
 		{
 			target = "minecraft:stone",
 			size = 14,
@@ -91,7 +106,7 @@ function main()
 	registerOreFeature
 	(
 		"ft_flint_generation",
-		"vestige:block_packed_flint",
+		"vestige:packed_flint",
 		{
 			target = "minecraft:stone",
 			size = 15,
@@ -104,7 +119,7 @@ function main()
 	registerOreFeature
 	(
 		"ft_flint_nether_generation",
-		"vestige:block_packed_flint",
+		"vestige:packed_flint",
 		{
 			target = "minecraft:netherrack",
 			size = 20,
@@ -117,20 +132,20 @@ function main()
 	registerOreFeature
 	(
 		"ft_flint_borderworld_generation",
-		"vestige:block_packed_flint",
+		"vestige:packed_flint",
 		{
-			target = "vestige:block_borderstone",
+			target = "vestige:borderstone",
 			size = 18,
 			yMin = 5,
 			yMax = 72,
 			count = 22,
-			dimension = 4,
+			dimension = 5,
 		}
 	)
 	registerOreFeature
 	(
 		"ft_apple_generation",
-		"vestige:block_apple_leaves",
+		"vestige:apple_leaves",
 		{
 			target = "minecraft:oak_leaves",
 			size = 4,
@@ -143,7 +158,7 @@ function main()
 	registerOreFeature
 	(
 		"ft_apple_generation",
-		"vestige:block_green_apple_leaves",
+		"vestige:green_apple_leaves",
 		{
 			target = "minecraft:oak_leaves",
 			size = 5,
@@ -156,7 +171,7 @@ function main()
 	registerOreFeature
 	(
 		"ft_nethervice_generation",
-		"vestige:block_nethervice",
+		"vestige:nethervice",
 		{
 			target = "minecraft:netherrack",
 			size = 28,
@@ -169,7 +184,7 @@ function main()
 	registerOreFeature
 	(
 		"ft_netherrack_iron_generation",
-		"vestige:block_netherrack_iron",
+		"vestige:netherrack_iron",
 		{
 			target = "minecraft:netherrack",
 			size = 12,
@@ -182,7 +197,7 @@ function main()
 	registerOreFeature
 	(
 		"ft_uranium_ore_generation",
-		"vestige:block_uranium_ore",
+		"vestige:uranium_ore",
 		{
 			target = "minecraft:nustone",
 			size = 13,
@@ -195,7 +210,7 @@ function main()
 	registerOreFeature
 	(
 		"ft_blaze_bricks_generation",
-		"vestige:block_blazing_brick",
+		"vestige:blazing_brick",
 		{
 			target = "minecraft:nether_brick",
 			size = 46,
@@ -207,23 +222,10 @@ function main()
 	)
 	registerOreFeature
 	(
-		"ft_spikebulb_generation",
-		"vestige:plant_spikebulb",
-		{
-			target = "vestige:plant_orchid",
-			size = 19,
-			yMin = 94,
-			yMax = 110,
-			count = 19,
-			dimension = 5,
-		}
-	)
-	registerOreFeature
-	(
 		"ft_bordercrust_generation",
-		"vestige:block_bordercrust",
+		"vestige:bordercrust",
 		{
-			target = "vestige:block_sleeping_sand",
+			target = "vestige:sleeping_sand",
 			size = 64,
 			yMin = 20,
 			yMax = 80,
@@ -234,9 +236,9 @@ function main()
 	registerOreFeature
 	(
 		"ft_bordercrust_small_generation",
-		"vestige:block_bordercrust",
+		"vestige:bordercrust",
 		{
-			target = "vestige:block_sleeping_sand",
+			target = "vestige:sleeping_sand",
 			size = 24,
 			yMin = 80,
 			yMax = 90,
@@ -247,9 +249,9 @@ function main()
 	registerOreFeature
 	(
 		"ft_solidshard_generation",
-		"vestige:block_solidshard",
+		"vestige:solidshard",
 		{
-			target = "vestige:block_sleeping_sand",
+			target = "vestige:sleeping_sand",
 			size = 25,
 			yMin = 100,
 			yMax = 112,
@@ -260,9 +262,9 @@ function main()
 	registerOreFeature
 	(
 		"ft_borderstone_coal_generation",
-		"vestige:block_borderstone_coal",
+		"vestige:borderstone_coal",
 		{
-			target = "vestige:block_borderstone",
+			target = "vestige:borderstone",
 			size = 17,
 			yMin = 20,
 			yMax = 90,
@@ -273,9 +275,9 @@ function main()
 	registerOreFeature
 	(
 		"ft_borderstone_iron_generation",
-		"vestige:block_borderstone_iron",
+		"vestige:borderstone_iron",
 		{
-			target = "vestige:block_borderstone",
+			target = "vestige:borderstone",
 			size = 14,
 			yMin = 10,
 			yMax = 90,
@@ -286,9 +288,9 @@ function main()
 	registerOreFeature
 	(
 		"ft_borderstone_gold_generation",
-		"vestige:block_borderstone_gold",
+		"vestige:borderstone_gold",
 		{
-			target = "vestige:block_borderstone",
+			target = "vestige:borderstone",
 			size = 13,
 			yMin = 10,
 			yMax = 56,
@@ -299,9 +301,9 @@ function main()
 	registerOreFeature
 	(
 		"ft_borderstone_diamond_generation",
-		"vestige:block_borderstone_diamond",
+		"vestige:borderstone_diamond",
 		{
-			target = "vestige:block_borderstone",
+			target = "vestige:borderstone",
 			size = 4,
 			yMin = 1,
 			yMax = 32,
@@ -312,9 +314,9 @@ function main()
 	registerOreFeature
 	(
 		"ft_borderstone_diamond_generation2",
-		"vestige:block_borderstone_diamond",
+		"vestige:borderstone_diamond",
 		{
-			target = "vestige:block_borderstone",
+			target = "vestige:borderstone",
 			size = 8,
 			yMin = 8,
 			yMax = 14,
@@ -325,9 +327,9 @@ function main()
 	registerOreFeature
 	(
 		"ft_borderstone_emerald_generation",
-		"vestige:block_borderstone_emerald",
+		"vestige:borderstone_emerald",
 		{
-			target = "vestige:block_borderstone",
+			target = "vestige:borderstone",
 			size = 3,
 			yMin = 1,
 			yMax = 52,
@@ -338,9 +340,9 @@ function main()
 	registerOreFeature
 	(
 		"ft_borderstone_topaz_generation",
-		"vestige:block_topaz_formation",
+		"vestige:topaz_formation",
 		{
-			target = "vestige:block_borderstone",
+			target = "vestige:borderstone",
 			size = 10,
 			yMin = 1,
 			yMax = 42,
@@ -354,7 +356,7 @@ function main()
 		"ft_limeforest_tree_small",
 		"oak",
 		{
-			biome = "vestige:biome_limeforest",
+			biome = "vestige:limeforest",
 			count = 3,
 			height = 4,
 			trunk = "minecraft:oak_log",
@@ -366,7 +368,7 @@ function main()
 		"ft_limeforest_tree_medium",
 		"oak",
 		{
-			biome = "vestige:biome_limeforest",
+			biome = "vestige:limeforest",
 			count = 2,
 			height = 5,
 			trunk = "minecraft:oak_log",
@@ -378,7 +380,7 @@ function main()
 		"ft_limeforest_tree_big",
 		"oak",
 		{
-			biome = "vestige:biome_limeforest",
+			biome = "vestige:limeforest",
 			count = 1,
 			height = 6,
 			trunk = "minecraft:oak_log",
@@ -390,7 +392,7 @@ function main()
 		"ft_winterland_tree",
 		"oak",
 		{
-			biome = "vestige:biome_winterland",
+			biome = "vestige:winterland",
 			count = .3,
 			height = 4,
 			trunk = "minecraft:oak_log",
@@ -419,7 +421,7 @@ function main()
 	registerEvent
 	(
 		"BlockUseEvent", function(event)
-			if event.block.id ~= "vestige:block_health_station" then return end
+			if event.block.id ~= "vestige:health_station" then return end
 			event.player:addEffect(Effect.Weakness, 160, 3)
 			event.player:addEffect(Effect.Slowness, 80, 2)
 			event.player:heal(1)
