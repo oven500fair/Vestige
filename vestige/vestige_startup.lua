@@ -33,9 +33,9 @@ function main()
 	(	"block_redstone_smooth_fence", "Smooth Redstone Fence", "textures/blocks/redstone_smooth.png",	BlockDefinition.new
 		(	{	hardness = 2.5,	resistance = 2.5,	shape = "fence",	lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
-	local block_sandstone_bricks = registerBlock
-	(	"block_sandstone_bricks", "Sandstone Bricks", "textures/blocks/sandstone_bricks.png",	BlockDefinition.new
-		(	{	hardness = 2.5,	resistance = 2.5,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
+	local block_sand_brick = registerBlock
+	(	"block_sand_brick", "Sand Brick", "textures/blocks/sand_brick.png",	BlockDefinition.new
+		(	{	hardness = .4,	resistance = 2,	sound = "sand",	tool = EBlockTool.Shovel,	drop = "minecraft:sand",	}	)
 	)
 	local block_topaz_formation = registerBlock
 	(
@@ -151,6 +151,11 @@ function main()
 	(
 		"block_borderstone_emerald", "Borderstone Emerald", "textures/blocks/borderworld/ores/borderstone_ore7.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 6,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
+	)
+	local block_solidshard = registerBlock
+	(
+		"block_solidshard", "Solidshard", "textures/blocks/borderworld/solidshard.png",
+		BlockDefinition.new	(	{	hardness = .6,	resistance = 10,	lightEmission = 15, lightBlocking = 0,	sound = "glass",	tool = EBlockTool.Pickaxe,	transparent = true,	dropNothing = true,	}	)
 	)
 	local block_bordercrust = registerBlock
 	(
@@ -346,12 +351,12 @@ function main()
 	)
 	local green_apple = registerItem
 	(
-		"green_apple", "Green Apple", "textures/items/green_apple",
+		"green_apple", "Green Apple", "textures/items/green_apple1",
 		ItemDefinition.new	(	{	base = EBaseItem.Food_Fruit,	nutrition = 2,	saturationMod = .9,	isMeat = false,	}	)
 	)
 	local diamond_apple = registerItem
 	(
-		"diamond_apple", "Diamond Apple", "textures/items/diamond_apple",
+		"diamond_apple", "Diamond Apple", "textures/items/green_apple2",
 		ItemDefinition.new	(	{	base = EBaseItem.Food_Fruit,	nutrition = 2,	saturationMod = 1.33,	canAlwaysEat = true,	isMeat = false,	}	)
 	)
 	local apple_pie = registerItem
@@ -413,7 +418,7 @@ function main()
         "smelt_uranium",
 		"vestige:uranium",
 		"vestige:depleted_uranium",
-		{ count = 1, xp = 6 }
+		{ count = 1, xp = 12 }
     )
 	registerSmeltingRecipe
     (
@@ -421,13 +426,6 @@ function main()
 		"vestige:block_redstone_brick",
 		"vestige:block_redstone_smooth",
 		{ count = 1, xp = .1 }
-    )
-	registerSmeltingRecipe
-    (
-        "smelt_sleeping_sandstone_smooth",
-		"vestige:block_sleeping_sandstone",
-		"vestige:block_sleeping_sandstone_smooth",
-		{ count = 1, xp = .35 }
     )
 	registerSmeltingRecipe
     (
@@ -596,24 +594,35 @@ function main()
 	)
 	registerShapedRecipe
 	(
-		"recipe_sleeping_sandstone_chiseled",
+		"recipe_sleeping_sandstone_smooth",
 		{
 			"ss",
 			"ss"
 		},
-		{s = "vestige:block_sleeping_sandstone_smooth"},
-		"vestige:block_sleeping_sandstone_chiseled",
+		{s = "vestige:block_sleeping_sandstone"},
+		"vestige:block_sleeping_sandstone_smooth",
 		{count = 4, group = ERecipeGroup.Structure}
 	)
 	registerShapedRecipe
 	(
-		"recipe_sandstone_bricks",
+		"recipe_sleeping_sandstone_chiseled",
+		{
+			"s ",
+			"s "
+		},
+		{s = "vestige:block_sleeping_sandstone_slab"},
+		"vestige:block_sleeping_sandstone_chiseled",
+		{count = 1, group = ERecipeGroup.Structure}
+	)
+	registerShapedRecipe
+	(
+		"recipe_sand_brick",
 		{
 			"ss",
 			"ss"
 		},
 		{s = "minecraft:sandstone"},
-		"vestige:block_sandstone_bricks",
+		"vestige:block_sand_brick",
 		{count = 4, group = ERecipeGroup.Structure}
 	)
 	registerShapedRecipe
@@ -751,12 +760,13 @@ function main()
 			rain = true,
 			temperature = .7,
 			downfall = .93,
-			size = 192,
+			size = 224,
 			scale = 1.2,
 			frequency = 2,
 			depth = 0.33,
 			grassCount = 2,
-			flowerCount = 0,
+			flowerCount = 1,
+			reedsCount = 1,
 			surface = "minecraft:grass_block",
 			filler = "minecraft:dirt",
 			tallGrass = "minecraft:tallgrass",
@@ -768,17 +778,17 @@ function main()
 		{
 			name = "Winter Land",
 			isOverworldBiome = true,
-			grassColor = 0xC1E6E1,
-			foliageColor = 0xAED4CC,
+			grassColor = 0xB5FFF8,
+			foliageColor = 0xC7FFF9,
 			waterColor = 0x4F8EE0,
 			skyColor = 0x75BFFF,
 			snow = true,
 			rain = true,
 			temperature = -.67,
 			downfall = .22,
-			size = 384,
+			size = 224,
 			scale = .2,
-			frequency = 1,
+			frequency = 2,
 			depth = 0.33,
 			grassCount = 1,
 			flowerCount = 0,

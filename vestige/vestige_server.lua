@@ -18,7 +18,7 @@ function main()
 		"vestige:block_topaz_formation",
 		{
 			target = "minecraft:stone",
-			size = 13,
+			size = 14,
 			yMin = 5,
 			yMax = 14,
 			count = 2,
@@ -183,14 +183,27 @@ function main()
 	)
 	registerOreFeature
 	(
+		"ft_solidshard_generation",
+		"vestige:block_solidshard",
+		{
+			target = "vestige:block_sleeping_sand",
+			size = 25,
+			yMin = 100,
+			yMax = 112,
+			count = 2,
+			dimension = 5,
+		}
+	)
+	registerOreFeature
+	(
 		"ft_borderstone_coal_generation",
 		"vestige:block_borderstone_coal",
 		{
 			target = "vestige:block_borderstone",
 			size = 17,
-			yMin = 1,
-			yMax = 80,
-			count = 19,
+			yMin = 20,
+			yMax = 90,
+			count = 18,
 			dimension = 5,
 		}
 	)
@@ -201,9 +214,9 @@ function main()
 		{
 			target = "vestige:block_borderstone",
 			size = 14,
-			yMin = 6,
-			yMax = 72,
-			count = 30,
+			yMin = 10,
+			yMax = 90,
+			count = 38,
 			dimension = 5,
 		}
 	)
@@ -214,9 +227,9 @@ function main()
 		{
 			target = "vestige:block_borderstone",
 			size = 13,
-			yMin = 6,
+			yMin = 10,
 			yMax = 56,
-			count = 20,
+			count = 24,
 			dimension = 5,
 		}
 	)
@@ -226,10 +239,10 @@ function main()
 		"vestige:block_borderstone_diamond",
 		{
 			target = "vestige:block_borderstone",
-			size = 9,
+			size = 4,
 			yMin = 1,
-			yMax = 26,
-			count = 7,
+			yMax = 32,
+			count = 14,
 			dimension = 5,
 		}
 	)
@@ -239,10 +252,10 @@ function main()
 		"vestige:block_borderstone_diamond",
 		{
 			target = "vestige:block_borderstone",
-			size = 5,
-			yMin = 9,
+			size = 8,
+			yMin = 8,
 			yMax = 14,
-			count = 4,
+			count = 3,
 			dimension = 5,
 		}
 	)
@@ -252,13 +265,27 @@ function main()
 		"vestige:block_borderstone_emerald",
 		{
 			target = "vestige:block_borderstone",
-			size = 2,
+			size = 3,
 			yMin = 1,
-			yMax = 64,
+			yMax = 52,
 			count = 56,
 			dimension = 5,
 		}
 	)
+	registerOreFeature
+	(
+		"ft_borderstone_topaz_generation",
+		"vestige:block_topaz_formation",
+		{
+			target = "vestige:block_borderstone",
+			size = 10,
+			yMin = 1,
+			yMax = 42,
+			count = 22,
+			dimension = 5,
+		}
+	)
+	
 	registerTreeFeature
 	(
 		"ft_limeforest_tree_small",
@@ -319,6 +346,7 @@ function main()
 			leaves = "vestige:block_winter_leaves",
 		}
 	)
+	
 	registerEvent
 	(
 		"ItemCompleteUseEvent", function(event)
