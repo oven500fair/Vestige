@@ -1,4 +1,67 @@
 function main()
+	local ft_winter_tree = registerFeature
+    (
+        "ft_winter_tree",
+        {
+            biomes = { "vestige:biome_winterland" },			-- The biomes to generate it in
+            dimensions = { "minecraft:overworld" },			-- Extra dimensions param "just in case"
+            count = 2,									-- Average count per chunk
+            chance = 0.4,								-- Placement chance
+            placement =
+            {
+                mode = "surface",						-- surface, range, fixed
+				--min = 0,								-- Use both of these for range, only min is required for fixed
+				--max = 0,
+                ground = { "minecraft:grass_block" }	-- Valid placement blocks
+            },
+            place = function(world)
+                local logTile = world:block("vestige:block_winter_log")
+                local leafTile = world:block("vestige:block_winter_leaves")
+                local soilTile = world:block("minecraft:dirt")
+                if logTile <= 0 or leafTile <= 0 or soilTile <= 0 then return false end
+
+                local height = world:randomInt(7, 12)
+				local heightVariance = world:randomInt(1, 2)
+				local flatVariance = world:randomInt(1, 2)
+				
+				for worldY = heightVariance, heightVariance + 1 do
+					for worldX = -3 - flatVariance, 3 + flatVariance do
+						for worldZ = -3 - flatVariance, 3 + flatVariance do
+							world:set(worldX, worldY, worldZ, leafTile)
+						end
+					end
+				end
+				
+				for worldY = heightVariance + 2, heightVariance + 3 do
+					for worldX = -2 - flatVariance, 2 + flatVariance do
+						for worldZ = -2 - flatVariance, 2 + flatVariance do
+							world:set(worldX, worldY, worldZ, leafTile)
+						end
+					end
+				end
+				
+				for worldY = heightVariance + 4, heightVariance + 5 do
+					for worldX = -1 - flatVariance, 1 + flatVariance do
+						for worldZ = -1 - flatVariance, 1 + flatVariance do
+							world:set(worldX, worldY, worldZ, leafTile)
+						end
+					end
+				end
+				
+				for worldY = heightVariance + 6, height + 2 do
+					for worldX = 0 - flatVariance, flatVariance do
+						for worldZ = 0 - flatVariance, flatVariance do
+							world:set(worldX, worldY, worldZ, leafTile)
+						end
+					end
+				end
+				
+				for worldY = 0, height do
+					world:set(0, worldY, 0, logTile)
+				end
+            end
+        }
+    )
 	registerOreFeature
 	(
 		"ft_topaz_generation",
@@ -332,18 +395,6 @@ function main()
 			height = 4,
 			trunk = "minecraft:oak_log",
 			leaves = "minecraft:oak_leaves",
-		}
-	)
-	registerTreeFeature
-	(
-		"ft_winterland_holiday_tree",
-		"oak",
-		{
-			biome = "vestige:biome_winterland",
-			count = 4,
-			height = 4,
-			trunk = "vestige:block_winter_log",
-			leaves = "vestige:block_winter_leaves",
 		}
 	)
 	
