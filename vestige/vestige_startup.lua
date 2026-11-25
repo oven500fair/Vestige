@@ -1,225 +1,225 @@
 function main()
 	local xray = registerBlock
 	(
-		"xray", "X-Ray Block", "textures/blocks/xray.png",
+		"xray", "X-Ray Block", "res/blocks/xray.png",
 		BlockDefinition.new	(	{	hardness = 0,	resistance = 0,	sound = "grass",	}	)
 	)
-	local mush = registerBlock
+	local mush_block = registerBlock
 	(
-		"mush", "Mush Block", "textures/blocks/mush.png",
+		"mush_block", "Mush Block", "res/blocks/mush_block.png",
 		BlockDefinition.new	(	{	hardness = 0.5,	resistance = 0.5,	sound = "gravel",	tool = EBlockTool.Shovel	}	)
 	)
 	local redstone_brick = registerBlock
-	(	"redstone_brick", "Redstone Brick", "textures/blocks/redstone_brick.png",	BlockDefinition.new
+	(	"redstone_brick", "Redstone Brick", "res/blocks/redstone_brick.png",	BlockDefinition.new
 		(	{	hardness = 2.5,	resistance = 2.5,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local redstone_brick_slab = registerBlock
-	(	"redstone_brick_slab", "Redstone Brick Slab", "textures/blocks/redstone_brick.png",	BlockDefinition.new
+	(	"redstone_brick_slab", "Redstone Brick Slab", "res/blocks/redstone_brick.png",	BlockDefinition.new
 		(	{	hardness = 2.5,	resistance = 2.5,	shape = "slab",	lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local redstone_brick_stairs = registerBlock
-	(	"redstone_brick_stairs", "Redstone Brick Stairs", "textures/blocks/redstone_brick.png",	BlockDefinition.new
+	(	"redstone_brick_stairs", "Redstone Brick Stairs", "res/blocks/redstone_brick.png",	BlockDefinition.new
 		(	{	hardness = 2.5,	resistance = 2.5,	shape = "stairs",	lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local redstone_smooth = registerBlock
-	(	"redstone_smooth", "Smooth Redstone", "textures/blocks/redstone_smooth.png",	BlockDefinition.new
+	(	"redstone_smooth", "Smooth Redstone", "res/blocks/redstone_smooth.png",	BlockDefinition.new
 		(	{	hardness = 2.5,	resistance = 2.5,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local redstone_smooth_slab = registerBlock
-	(	"redstone_smooth_slab", "Smooth Redstone Slab", "textures/blocks/redstone_smooth.png",	BlockDefinition.new
+	(	"redstone_smooth_slab", "Smooth Redstone Slab", "res/blocks/redstone_smooth.png",	BlockDefinition.new
 		(	{	hardness = 2.5,	resistance = 2.5,	shape = "slab",	lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local redstone_smooth_fence = registerBlock
-	(	"redstone_smooth_fence", "Smooth Redstone Fence", "textures/blocks/redstone_smooth.png",	BlockDefinition.new
+	(	"redstone_smooth_fence", "Smooth Redstone Fence", "res/blocks/redstone_smooth.png",	BlockDefinition.new
 		(	{	hardness = 2.5,	resistance = 2.5,	shape = "fence",	lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local sand_brick = registerBlock
-	(	"sand_brick", "Sand Brick", "textures/blocks/sand_brick.png",	BlockDefinition.new
+	(	"sand_brick", "Sand Brick", "res/blocks/sand_brick.png",	BlockDefinition.new
 		(	{	hardness = .4,	resistance = 2,	sound = "sand",	tool = EBlockTool.Shovel,	drop = "minecraft:sand",	}	)
 	)
 	local topaz_formation = registerBlock
 	(
-		"topaz_formation", "Topaz Formation", "textures/blocks/ores/topaz_formation.png",
+		"topaz_formation", "Topaz Formation", "res/blocks/ores/topaz_formation.png",
 		BlockDefinition.new	(	{	hardness = 4,	resistance = 5,	sound = "glass",	tool = EBlockTool.Pickaxe,	drop = "vestige:topaz",	}	)
 	)
 	local topaz_block = registerBlock
 	(
-		"topaz_block", "Block of Topaz", "textures/blocks/ores/topaz_block.png",
+		"topaz_block", "Block of Topaz", "res/blocks/ores/topaz_block.png",
 		BlockDefinition.new	(	{	hardness = 4,	resistance = 5,	sound = "glass",	tool = EBlockTool.Pickaxe,	drop = "vestige:topaz",	}	)
 	)
 	local uranium_ore = registerBlock
 	(
-		"uranium_ore", "Uranium Ore", "textures/blocks/ores/uranium_ore.png",
+		"uranium_ore", "Uranium Ore", "res/blocks/ores/uranium_ore.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 5,	sound = "stone",	tool = EBlockTool.Pickaxe,	}	)
 	)
 	local uranium_block = registerBlock
 	(
-		"uranium_block", "Block of Uranium", "textures/blocks/ores/uranium_block.png",
+		"uranium_block", "Block of Uranium", "res/blocks/ores/uranium_block.png",
 		BlockDefinition.new	(	{	hardness = 4,	resistance = 5,	sound = "stone",	tool = EBlockTool.Pickaxe,	}	)
 	)
 	local winter_wood = registerBlock
 	(
-		"winter_wood", "Winter Wood", "textures/blocks/winter_wood.png",
+		"winter_wood", "Winter Wood", "res/blocks/winter_wood.png",
 		BlockDefinition.new	(	{	hardness = 1.2,	resistance = 2,	sound = "wood",	tool = EBlockTool.Hatchet,	}	)
 	)
 	local winter_log = registerBlock
 	(
-		"winter_log", "Winter Log", "textures/blocks/winter_log1.png",
-		BlockDefinition.new	(	{	hardness = 1.2,	resistance = 2,	sound = "wood",	tool = EBlockTool.Hatchet, topTexture = "textures/blocks/winter_log2.png", bottomTexture = "textures/blocks/winter_log2.png",	}	)
+		"winter_log", "Winter Log", "res/blocks/winter_log1.png",
+		BlockDefinition.new	(	{	hardness = 1.2,	resistance = 2,	sound = "wood",	tool = EBlockTool.Hatchet, topTexture = "res/blocks/winter_log2.png", bottomTexture = "res/blocks/winter_log2.png",	}	)
 	)
 	local winter_leaves = registerBlock
 	(
-		"winter_leaves", "Winter Leaves", "textures/blocks/winter_leaves.png",
+		"winter_leaves", "Winter Leaves", "res/blocks/winter_leaves.png",
 		BlockDefinition.new	(	{	hardness = .15,	resistance = 0,	sound = "grass",	tool = EBlockTool.Hoe,	transparent = true,	}	)
 	)
 	local apple_leaves = registerBlock
 	(
-		"apple_leaves", "Apple Leaves", "textures/blocks/saplings/apple_leaves.png",
+		"apple_leaves", "Apple Leaves", "res/blocks/saplings/apple_leaves.png",
 		BlockDefinition.new	(	{	hardness = .15,	resistance = 0,	sound = "grass",	tool = EBlockTool.Hoe,	drop = "minecraft:apple",	dropMin = 1,	dropMax = 4,	transparent = true,	}	)
 	)
 	local green_apple_leaves = registerBlock
 	(
-		"green_apple_leaves", "Green Apple Leaves", "textures/blocks/saplings/green_apple_leaves.png",
+		"green_apple_leaves", "Green Apple Leaves", "res/blocks/saplings/green_apple_leaves.png",
 		BlockDefinition.new	(	{	hardness = .15,	resistance = 0,	sound = "grass",	tool = EBlockTool.Hoe,	drop = "vestige:green_apple",	dropMin = 1,	dropMax = 4,	transparent = true,	}	)
 	)
 	local enchanted_dirt = registerBlock
 	(
-		"enchanted_dirt", "Enchanted Dirt", "textures/blocks/borderworld/enchanted_dirt.png",
+		"enchanted_dirt", "Enchanted Dirt", "res/blocks/borderworld/enchanted_dirt.png",
 		BlockDefinition.new	(	{	hardness = .35,	resistance = 1,	sound = "grass",	tool = EBlockTool.Shovel,	}	)
 	)
 	local sleeping_sand = registerBlock
 	(
-		"sleeping_sand", "Sleeping Sand", "textures/blocks/borderworld/sleeping_sand.png",
+		"sleeping_sand", "Sleeping Sand", "res/blocks/borderworld/sleeping_sand.png",
 		BlockDefinition.new	(	{	hardness = .35,	resistance = 1,	sound = "sand",	tool = EBlockTool.Shovel,	}	)
 	)
 	local sleeping_sandstone = registerBlock
 	(
-		"sleeping_sandstone", "Sleeping Sandstone", "textures/blocks/borderworld/sleeping_sandstone1.png",
-		BlockDefinition.new	(	{	hardness = 2.2,	resistance = 12,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "textures/blocks/borderworld/sleeping_sandstone2.png",	topTexture = "textures/blocks/borderworld/sleeping_sandstone3.png"	}	)
+		"sleeping_sandstone", "Sleeping Sandstone", "res/blocks/borderworld/sleeping_sandstone1.png",
+		BlockDefinition.new	(	{	hardness = 2.2,	resistance = 12,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "res/blocks/borderworld/sleeping_sandstone2.png",	topTexture = "res/blocks/borderworld/sleeping_sandstone3.png"	}	)
 	)
 	local sleeping_sandstone_slab = registerBlock
 	(
-		"sleeping_sandstone_slab", "Sleeping Sandstone Slab", "textures/blocks/borderworld/sleeping_sandstone1.png",
-		BlockDefinition.new	(	{	hardness = 2.2,	resistance = 12,	shape = "slab",	lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "textures/blocks/borderworld/sleeping_sandstone2.png",	topTexture = "textures/blocks/borderworld/sleeping_sandstone3.png"	}	)
+		"sleeping_sandstone_slab", "Sleeping Sandstone Slab", "res/blocks/borderworld/sleeping_sandstone1.png",
+		BlockDefinition.new	(	{	hardness = 2.2,	resistance = 12,	shape = "slab",	lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "res/blocks/borderworld/sleeping_sandstone2.png",	topTexture = "res/blocks/borderworld/sleeping_sandstone3.png"	}	)
 	)
 	local sleeping_sandstone_stairs = registerBlock
 	(
-		"sleeping_sandstone_stairs", "Sleeping Sandstone Stairs", "textures/blocks/borderworld/sleeping_sandstone1.png",
-		BlockDefinition.new	(	{	hardness = 2.2,	resistance = 12,	shape = "stairs",	lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "textures/blocks/borderworld/sleeping_sandstone2.png",	topTexture = "textures/blocks/borderworld/sleeping_sandstone3.png"	}	)
+		"sleeping_sandstone_stairs", "Sleeping Sandstone Stairs", "res/blocks/borderworld/sleeping_sandstone1.png",
+		BlockDefinition.new	(	{	hardness = 2.2,	resistance = 12,	shape = "stairs",	lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "res/blocks/borderworld/sleeping_sandstone2.png",	topTexture = "res/blocks/borderworld/sleeping_sandstone3.png"	}	)
 	)
 	local sleeping_sandstone_smooth = registerBlock
 	(
-		"sleeping_sandstone_smooth", "Smooth Sleeping Sandstone", "textures/blocks/borderworld/sleeping_sandstone_smooth.png",
-		BlockDefinition.new	(	{	hardness = 2.2,	resistance = 12,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "textures/blocks/borderworld/sleeping_sandstone3.png",	topTexture = "textures/blocks/borderworld/sleeping_sandstone3.png"	}	)
+		"sleeping_sandstone_smooth", "Smooth Sleeping Sandstone", "res/blocks/borderworld/sleeping_sandstone_smooth.png",
+		BlockDefinition.new	(	{	hardness = 2.2,	resistance = 12,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "res/blocks/borderworld/sleeping_sandstone3.png",	topTexture = "res/blocks/borderworld/sleeping_sandstone3.png"	}	)
 	)
 	local sleeping_sandstone_chiseled = registerBlock
 	(
-		"sleeping_sandstone_chiseled", "Chiseled Sleeping Sandstone", "textures/blocks/borderworld/sleeping_sandstone_chiseled.png",
-		BlockDefinition.new	(	{	hardness = 2.2,	resistance = 12,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "textures/blocks/borderworld/sleeping_sandstone3.png",	topTexture = "textures/blocks/borderworld/sleeping_sandstone3.png"	}	)
+		"sleeping_sandstone_chiseled", "Chiseled Sleeping Sandstone", "res/blocks/borderworld/sleeping_sandstone_chiseled.png",
+		BlockDefinition.new	(	{	hardness = 2.2,	resistance = 12,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "res/blocks/borderworld/sleeping_sandstone3.png",	topTexture = "res/blocks/borderworld/sleeping_sandstone3.png"	}	)
 	)
 	local sleeping_glass = registerBlock
 	(
-		"sleeping_glass", "Sleeping Glass", "textures/blocks/borderworld/sleeping_glass.png",
+		"sleeping_glass", "Sleeping Glass", "res/blocks/borderworld/sleeping_glass.png",
 		BlockDefinition.new	(	{	hardness = .15,	resistance = 8,	sound = "glass",	tool = EBlockTool.Pickaxe,	transparent = true,	dropNothing = true,	}	)
 	)
 	local borderstone = registerBlock
 	(
-		"borderstone", "Borderstone", "textures/blocks/borderworld/borderstone.png",
+		"borderstone", "Borderstone", "res/blocks/borderworld/borderstone.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 18,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local borderstone_coal = registerBlock
 	(
-		"borderstone_coal", "Borderstone Coal", "textures/blocks/borderworld/ores/borderstone_ore1.png",
+		"borderstone_coal", "Borderstone Coal", "res/blocks/borderworld/ores/borderstone_ore1.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 18,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local borderstone_iron = registerBlock
 	(
-		"borderstone_iron", "Borderstone Iron", "textures/blocks/borderworld/ores/borderstone_ore2.png",
+		"borderstone_iron", "Borderstone Iron", "res/blocks/borderworld/ores/borderstone_ore2.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 18,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local borderstone_gold = registerBlock
 	(
-		"borderstone_gold", "Borderstone Gold", "textures/blocks/borderworld/ores/borderstone_ore3.png",
+		"borderstone_gold", "Borderstone Gold", "res/blocks/borderworld/ores/borderstone_ore3.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 18,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local borderstone_diamond = registerBlock
 	(
-		"borderstone_diamond", "Borderstone Diamond", "textures/blocks/borderworld/ores/borderstone_ore6.png",
+		"borderstone_diamond", "Borderstone Diamond", "res/blocks/borderworld/ores/borderstone_ore6.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 18,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local borderstone_emerald = registerBlock
 	(
-		"borderstone_emerald", "Borderstone Emerald", "textures/blocks/borderworld/ores/borderstone_ore7.png",
+		"borderstone_emerald", "Borderstone Emerald", "res/blocks/borderworld/ores/borderstone_ore7.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 18,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local solidshard = registerBlock
 	(
-		"solidshard", "Solidshard", "textures/blocks/borderworld/solidshard.png",
+		"solidshard", "Solidshard", "res/blocks/borderworld/solidshard.png",
 		BlockDefinition.new	(	{	hardness = .6,	resistance = 25,	lightEmission = 15, lightBlocking = 0,	sound = "glass",	tool = EBlockTool.Pickaxe,	transparent = true,	dropNothing = true,	}	)
 	)
 	local bordercrust = registerBlock
 	(
-		"bordercrust", "Bordercrust", "textures/blocks/borderworld/bordercrust.png",
+		"bordercrust", "Bordercrust", "res/blocks/borderworld/bordercrust.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 6,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local nethervice = registerBlock
 	(
-		"nethervice", "Nethervice", "textures/blocks/nethervice.png",
+		"nethervice", "Nethervice", "res/blocks/nethervice.png",
 		BlockDefinition.new	(	{	hardness = .6,	resistance = 15,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local netherrack_iron = registerBlock
 	(
-		"netherrack_iron", "Netherrack Iron", "textures/blocks/ores/netherrack_iron.png",
+		"netherrack_iron", "Netherrack Iron", "res/blocks/ores/netherrack_iron.png",
 		BlockDefinition.new	(	{	hardness = .85,	resistance = 25,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
 	local blazing_brick = registerBlock
 	(
-		"blazing_brick", "Blazing Bricks", "textures/blocks/blazing_brick.png",
+		"blazing_brick", "Blazing Bricks", "res/blocks/blazing_brick.png",
 		BlockDefinition.new	(	{	hardness = 2.5,	resistance = 25,	lightEmission = 12, lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe,	drop = "minecraft:glowstone_dust",	dropMin = 1,	dropMax = 2	}	)
 	)
 	local blazing_brick_fence = registerBlock
 	(
-		"blazing_brick_fence", "Blazing Brick Fence", "textures/blocks/blazing_brick.png",
+		"blazing_brick_fence", "Blazing Brick Fence", "res/blocks/blazing_brick.png",
 		BlockDefinition.new	(	{	hardness = 2.5,	resistance = 25,	shape = "fence",	lightEmission = 12, lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe,	drop = "minecraft:glowstone_dust",	dropMin = 1,	dropMax = 2	}	)
 	)
 	local blazing_brick_slab = registerBlock
 	(
-		"blazing_brick_slab", "Blazing Brick Slab", "textures/blocks/blazing_brick.png",
+		"blazing_brick_slab", "Blazing Brick Slab", "res/blocks/blazing_brick.png",
 		BlockDefinition.new	(	{	hardness = 2.5,	resistance = 25,	shape = "slab",	lightEmission = 12, lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe,	drop = "minecraft:glowstone_dust",	dropMin = 1,	dropMax = 2	}	)
 	)
 	local blazing_brick_stairs = registerBlock
 	(
-		"blazing_brick_stairs", "Blazing Brick Stairs", "textures/blocks/blazing_brick.png",
+		"blazing_brick_stairs", "Blazing Brick Stairs", "res/blocks/blazing_brick.png",
 		BlockDefinition.new	(	{	hardness = 2.5,	resistance = 25,	shape = "stairs",	lightEmission = 12, lightBlocking = 0,	sound = "stone",	tool = EBlockTool.Pickaxe,	drop = "minecraft:glowstone_dust",	dropMin = 1,	dropMax = 2	}	)
 	)
 	local packed_flint = registerBlock
 	(
-		"packed_flint", "Packed Flint", "textures/blocks/packed_flint.png",
+		"packed_flint", "Packed Flint", "res/blocks/packed_flint.png",
 		BlockDefinition.new	(	{	hardness = .8,	resistance = 5,	sound = "gravel",	tool = EBlockTool.Shovel,	drop = "minecraft:flint",	}	)
 	)
 	local health_station = registerBlock
 	(
-		"health_station", "Health Station", "textures/blocks/health_station1.png",
-		BlockDefinition.new	(	{	hardness = 3.5,	resistance = 12,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "textures/blocks/health_station3.png",	topTexture = "textures/blocks/health_station2.png"	}	)
+		"health_station", "Health Station", "res/blocks/health_station1.png",
+		BlockDefinition.new	(	{	hardness = 3.5,	resistance = 12,	sound = "stone",	tool = EBlockTool.Pickaxe,	bottomTexture = "res/blocks/health_station3.png",	topTexture = "res/blocks/health_station2.png"	}	)
 	)
 	local green_apple_sapling = registerSapling
 	(
-		"green_apple",	"Green Apple Sapling",	"textures/blocks/saplings/green_apple_sapling.png",
+		"green_apple",	"Green Apple Sapling",	"res/blocks/saplings/green_apple_sapling.png",
 		{	shape = "oak",	height = 4,	trunk = "vestige:sleeping_sand",	leaves = "vestige:green_apple_leaves",	}
 	)
 	local apple_sapling = registerSapling
 	(
-		"apple",	"Apple Sapling",	"textures/blocks/saplings/apple_sapling.png",
+		"apple",	"Apple Sapling",	"res/blocks/saplings/apple_sapling.png",
 		{	shape = "oak",	height = 4,	trunk = "vestige:sleeping_sand",	leaves = "vestige:apple_leaves",	}
 	)
 	local orchid = registerPlant
 	(
-		"orchid", "Orchid", "textures/blocks/borderworld/orchid.png",
+		"orchid", "Orchid", "res/blocks/borderworld/orchid.png",
 		{	soil = {	"vestige:sleeping_sand",	"vestige:borderstone",	"vestige:bordercrust",	"minecraft:sand",	"minecraft:grass_block",	"minecraft:netherrack",	"minecraft:endstone",	"minecraft:veloett_grass",	"minecraft:nugrass",	}	}
 	)
 	local spikebulb = registerPlant
 	(
-		"spikebulb", "Spikebulb", "textures/blocks/borderworld/spikebulb.png",
+		"spikebulb", "Spikebulb", "res/blocks/borderworld/spikebulb.png",
 		{	soil = {	"vestige:sleeping_sand",	"vestige:borderstone",	"vestige:bordercrust",	"minecraft:sand",	"minecraft:grass_block",	"minecraft:netherrack",	"minecraft:endstone",	"minecraft:veloett_grass",	"minecraft:nugrass",	}	}
 	)
 	
@@ -233,47 +233,47 @@ function main()
 	)
 	local nethervice_sword = registerItem
 	(
-		"nethervice_sword", "Nethervice Sword", "textures/tools/nethervice_tools1.png",
+		"nethervice_sword", "Nethervice Sword", "res/tools/nethervice_tools1.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Weapon,	customTier = tier_nethervice,	material = EItemMaterial.Iron,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
 	local nethervice_shovel = registerItem
 	(
-		"nethervice_shovel", "Nethervice Shovel", "textures/tools/nethervice_tools2.png",
+		"nethervice_shovel", "Nethervice Shovel", "res/tools/nethervice_tools2.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Shovel,	customTier = tier_nethervice,	material = EItemMaterial.Iron,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
 	local nethervice_pickaxe = registerItem
 	(
-		"nethervice_pickaxe", "Nethervice Pickaxe", "textures/tools/nethervice_tools3.png",
+		"nethervice_pickaxe", "Nethervice Pickaxe", "res/tools/nethervice_tools3.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Pickaxe,	customTier = tier_nethervice,	material = EItemMaterial.Iron,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
 	local nethervice_axe = registerItem
 	(
-		"nethervice_axe", "Nethervice Axe", "textures/tools/nethervice_tools4.png",
+		"nethervice_axe", "Nethervice Axe", "res/tools/nethervice_tools4.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Hatchet,	customTier = tier_nethervice,	material = EItemMaterial.Iron,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
 	local nethervice_hoe = registerItem
 	(
-		"nethervice_hoe", "Nethervice Hoe", "textures/tools/nethervice_tools5.png",
+		"nethervice_hoe", "Nethervice Hoe", "res/tools/nethervice_tools5.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Hoe,	customTier = tier_nethervice,	material = EItemMaterial.Iron,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
 	local nethervice_helmet = registerItem
 	(
-		"nethervice_helmet", "Nethervice Helmet", "textures/armor/nethervice_armor1.png",
+		"nethervice_helmet", "Nethervice Helmet", "res/armor/nethervice_armor1.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Helmet,	armorSet = "tier_armor_nethervice",	customArmorMaterial = tier_armor_nethervice,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
 	local nethervice_chestplate = registerItem
 	(
-		"nethervice_chestplate", "Nethervice Chestplate", "textures/armor/nethervice_armor2.png",
+		"nethervice_chestplate", "Nethervice Chestplate", "res/armor/nethervice_armor2.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Chestplate,	armorSet = "tier_armor_nethervice",	customArmorMaterial = tier_armor_nethervice,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
 	local nethervice_leggings = registerItem
 	(
-		"nethervice_leggings", "Nethervice Leggings", "textures/armor/nethervice_armor3.png",
+		"nethervice_leggings", "Nethervice Leggings", "res/armor/nethervice_armor3.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Leggings,	armorSet = "tier_armor_nethervice",	customArmorMaterial = tier_armor_nethervice,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
 	local nethervice_boots = registerItem
 	(
-		"nethervice_boots", "Nethervice Boots", "textures/armor/nethervice_armor4.png",
+		"nethervice_boots", "Nethervice Boots", "res/armor/nethervice_armor4.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Boots,	armorSet = "tier_armor_nethervice",	customArmorMaterial = tier_armor_nethervice,	maxStackSize = 1,	fireImmune = true,	blastImmune = true	}	)
 	)
 	local tier_topaz = registerItemTier
@@ -286,82 +286,82 @@ function main()
 	)
 	local topaz_sword = registerItem
 	(
-		"topaz_sword", "Topaz Sword", "textures/tools/topaz_tools1.png",
+		"topaz_sword", "Topaz Sword", "res/tools/topaz_tools1.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Weapon,	customTier = tier_topaz,	material = EItemMaterial.Iron,	maxStackSize = 1,	}	)
 	)
 	local topaz_shovel = registerItem
 	(
-		"topaz_shovel", "Topaz Shovel", "textures/tools/topaz_tools2.png",
+		"topaz_shovel", "Topaz Shovel", "res/tools/topaz_tools2.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Shovel,	customTier = tier_topaz,	material = EItemMaterial.Iron,	maxStackSize = 1,	}	)
 	)
 	local topaz_pickaxe = registerItem
 	(
-		"topaz_pickaxe", "Topaz Pickaxe", "textures/tools/topaz_tools3.png",
+		"topaz_pickaxe", "Topaz Pickaxe", "res/tools/topaz_tools3.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Pickaxe,	customTier = tier_topaz,	material = EItemMaterial.Iron,	maxStackSize = 1,	}	)
 	)
 	local topaz_axe = registerItem
 	(
-		"topaz_axe", "Topaz Axe", "textures/tools/topaz_tools4.png",
+		"topaz_axe", "Topaz Axe", "res/tools/topaz_tools4.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Hatchet,	customTier = tier_topaz,	material = EItemMaterial.Iron,	maxStackSize = 1,	}	)
 	)
 	local topaz_hoe = registerItem
 	(
-		"topaz_hoe", "Topaz Hoe", "textures/tools/topaz_tools5.png",
+		"topaz_hoe", "Topaz Hoe", "res/tools/topaz_tools5.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Hoe,	customTier = tier_topaz,	material = EItemMaterial.Iron,	maxStackSize = 1,	}	)
 	)
 	local topaz_helmet = registerItem
 	(
-		"topaz_helmet", "Topaz Helmet", "textures/armor/topaz_armor1.png",
+		"topaz_helmet", "Topaz Helmet", "res/armor/topaz_armor1.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Helmet,	armorSet = "tier_armor_topaz",	customArmorMaterial = tier_armor_topaz,	maxStackSize = 1,	}	)
 	)
 	local topaz_chestplate = registerItem
 	(
-		"topaz_chestplate", "Topaz Chestplate", "textures/armor/topaz_armor2.png",
+		"topaz_chestplate", "Topaz Chestplate", "res/armor/topaz_armor2.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Chestplate,	armorSet = "tier_armor_topaz",	customArmorMaterial = tier_armor_topaz,	maxStackSize = 1,	}	)
 	)
 	local topaz_leggings = registerItem
 	(
-		"topaz_leggings", "Topaz Leggings", "textures/armor/topaz_armor3.png",
+		"topaz_leggings", "Topaz Leggings", "res/armor/topaz_armor3.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Leggings,	armorSet = "tier_armor_topaz",	customArmorMaterial = tier_armor_topaz,	maxStackSize = 1,	}	)
 	)
 	local topaz_boots = registerItem
 	(
-		"topaz_boots", "Topaz Boots", "textures/armor/topaz_armor4.png",
+		"topaz_boots", "Topaz Boots", "res/armor/topaz_armor4.png",
 		ItemDefinition.new	(	{	base = EBaseItem.Boots,	armorSet = "tier_armor_topaz",	customArmorMaterial = tier_armor_topaz,	maxStackSize = 1,	}	)
 	)
 	local synth_pearl = registerItem
 	(
-		"synth_pearl", "Synth Pearl", "textures/items/synth_pearl",
+		"synth_pearl", "Synth Pearl", "res/items/synth_pearl",
 		ItemDefinition.new	(	{	base = EBaseItem.Food_Fruit, nutrition = 8, saturationMod = .1, canAlwaysEat = true	}	)
 	)
 	local topaz = registerItem
 	(
-		"topaz", "Topaz", "textures/items/topaz",
+		"topaz", "Topaz", "res/items/topaz",
 		ItemDefinition.new	(	{	base = EBaseItem.Ingot,	material = EItemMaterial.Diamond	}	)
 	)
 	local uranium = registerItem
 	(
-		"uranium", "Uranium", "textures/items/uranium",
+		"uranium", "Uranium", "res/items/uranium",
 		ItemDefinition.new	(	{	base = EBaseItem.Ingot,	material = EItemMaterial.Redstone	}	)
 	)
 	local depleted_uranium = registerItem
 	(
-		"depleted_uranium", "Depleted Uranium", "textures/items/uranium_depleted",
+		"depleted_uranium", "Depleted Uranium", "res/items/uranium_depleted",
 		ItemDefinition.new	(	{	base = EBaseItem.Ingot,	material = EItemMaterial.Redstone	}	)
 	)
 	local green_apple = registerItem
 	(
-		"green_apple", "Green Apple", "textures/items/green_apple1",
+		"green_apple", "Green Apple", "res/items/green_apple1",
 		ItemDefinition.new	(	{	base = EBaseItem.Food_Fruit,	nutrition = 2,	saturationMod = .9,	isMeat = false,	}	)
 	)
 	local diamond_apple = registerItem
 	(
-		"diamond_apple", "Diamond Apple", "textures/items/green_apple2",
+		"diamond_apple", "Diamond Apple", "res/items/green_apple2",
 		ItemDefinition.new	(	{	base = EBaseItem.Food_Fruit,	nutrition = 2,	saturationMod = 1.33,	canAlwaysEat = true,	isMeat = false,	}	)
 	)
 	local apple_pie = registerItem
 	(
-		"apple_pie", "Apple Pie", "textures/items/apple_pie",
+		"apple_pie", "Apple Pie", "res/items/apple_pie",
 		ItemDefinition.new	(	{	base = EBaseItem.Food_Fruit,	nutrition = 8,	saturationMod = .8,	isMeat = false,	}	)
 	)
 	registerSmeltingRecipe
@@ -864,32 +864,32 @@ function main()
 	)
 	local portal_borderworld = registerBlock
 	(
-		"portal_borderworld", "Borderworld Portal", "textures/blocks/portals/portal_borderworld.png",
+		"portal_borderworld", "Borderworld Portal", "res/blocks/portals/portal_borderworld.png",
 		BlockDefinition.new	(	{	hardness = -1,	resistance = 6000000,	lightEmission = 15, lightBlocking = 0,	sound = "glass",	tool = EBlockTool.Pickaxe,	transparent = true,	dropNothing = true,	}	)
 	)
 	local portal_borderworld_end = registerBlock
 	(
-		"portal_borderworld_end", "Borderworld End Portal", "textures/blocks/portals/portal_borderworld_end.png",
+		"portal_borderworld_end", "Borderworld End Portal", "res/blocks/portals/portal_borderworld_end.png",
 		BlockDefinition.new	(	{	hardness = -1,	resistance = 6000000,	lightEmission = 15, lightBlocking = 0,	sound = "glass",	tool = EBlockTool.Pickaxe,	transparent = true,	dropNothing = true,	}	)
 	)
 	local portal_borderworld_outerend = registerBlock
 	(
-		"portal_borderworld_outerend", "Borderworld Outer End Portal", "textures/blocks/portals/portal_borderworld_end.png",
+		"portal_borderworld_outerend", "Borderworld Outer End Portal", "res/blocks/portals/portal_borderworld_end.png",
 		BlockDefinition.new	(	{	hardness = -1,	resistance = 6000000,	lightEmission = 15, lightBlocking = 0,	sound = "glass",	tool = EBlockTool.Pickaxe,	transparent = true,	dropNothing = true,	}	)
 	)
 	local portal_borderworld_nether = registerBlock
 	(
-		"portal_borderworld_nether", "Borderworld Nether Portal", "textures/blocks/portals/portal_borderworld_nether.png",
+		"portal_borderworld_nether", "Borderworld Nether Portal", "res/blocks/portals/portal_borderworld_nether.png",
 		BlockDefinition.new	(	{	hardness = -1,	resistance = 6000000,	lightEmission = 15, lightBlocking = 0,	sound = "glass",	tool = EBlockTool.Pickaxe,	transparent = true,	dropNothing = true,	}	)
 	)
 	local portal_borderworld_aether = registerBlock
 	(
-		"portal_borderworld_aether", "Borderworld Aether Portal", "textures/blocks/portals/portal_borderworld_aether.png",
+		"portal_borderworld_aether", "Borderworld Aether Portal", "res/blocks/portals/portal_borderworld_aether.png",
 		BlockDefinition.new	(	{	hardness = -1,	resistance = 6000000,	lightEmission = 15, lightBlocking = 0,	sound = "glass",	tool = EBlockTool.Pickaxe,	transparent = true,	dropNothing = true,	}	)
 	)
 	local portal_borderworld_nurealm = registerBlock
 	(
-		"portal_borderworld_nurealm", "Borderworld Nurealm Portal", "textures/blocks/portals/portal_borderworld_nurealm.png",
+		"portal_borderworld_nurealm", "Borderworld Nurealm Portal", "res/blocks/portals/portal_borderworld_nurealm.png",
 		BlockDefinition.new	(	{	hardness = -1,	resistance = 6000000,	lightEmission = 15, lightBlocking = 0,	sound = "glass",	tool = EBlockTool.Pickaxe,	transparent = true,	dropNothing = true,	}	)
 	)
 	local portal_borderworld = registerPortal	(	"portal_borderworld",	{	block = "vestige:portal_borderworld",	frame = "vestige:sleeping_sandstone",	from = "minecraft:overworld",	to = "vestige:borderworld",	bidirectional = true,	cooldown = 88	}	)

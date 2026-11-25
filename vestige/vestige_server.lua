@@ -14,6 +14,36 @@ function main()
 			end
 		}
 	)
+	local ft_pyramid = registerFeature
+	(
+		"ft_pyramid",
+		{
+			biomes = {	"vestige:borderworld_biome"	},
+			dimensions  = {	"vestige:borderworld"	},
+			count = 1,
+			chance = .1,
+			placement = {	mode = "surface",	ground = {	"vestige:sleeping_sand"	}	},
+			place = function(world)
+				local sand = world:block("vestige:sleeping_sand")
+				local sandstone = world:block("vestige:sleeping_sandstone")
+				local Height = world:randomInt(4, 10)
+				
+				for worldY = -3, Height do
+					radius = Height - worldY
+					for worldX = -radius, radius do
+						for worldZ = -radius, radius do
+							if worldX + worldZ <= radius then
+							world:set(worldX, worldY, worldZ, sandstone)
+							end
+							if worldX + worldZ >= -radius then
+							world:set(worldX, worldY, worldZ, sandstone)
+							end
+						end
+					end
+				end
+			end
+		}
+	)
 	local ft_winter_tree = registerFeature
     (
         "ft_winter_tree",
