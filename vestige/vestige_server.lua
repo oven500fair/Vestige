@@ -14,29 +14,25 @@ function main()
 			end
 		}
 	)
-	local ft_pyramid = registerFeature
+	local ft_solidshard_sphere = registerFeature
 	(
-		"ft_pyramid",
+		"ft_solidshard_sphere",
 		{
 			biomes = {	"vestige:borderworld_biome"	},
 			dimensions  = {	"vestige:borderworld"	},
 			count = 1,
-			chance = .1,
+			chance = .16,
 			placement = {	mode = "surface",	ground = {	"vestige:sleeping_sand"	}	},
 			place = function(world)
-				local sand = world:block("vestige:sleeping_sand")
-				local sandstone = world:block("vestige:sleeping_sandstone")
-				local Height = world:randomInt(4, 10)
-				
-				for worldY = -3, Height do
-					radius = Height - worldY
-					for worldX = -radius, radius do
-						for worldZ = -radius, radius do
-							if worldX + worldZ <= radius then
-							world:set(worldX, worldY, worldZ, sandstone)
-							end
-							if worldX + worldZ >= -radius then
-							world:set(worldX, worldY, worldZ, sandstone)
+				local solidshard = world:block("vestige:solidshard")
+				local size = world:randomInt(3, 5)
+				for worldY = -size, size do
+					for worldX = -size, size do
+						for worldZ = -size, size do
+							if size * size > (worldX * worldX + worldZ * worldZ + worldY * worldY) then
+								if world:randomInt(0, 2) == 2 then
+								world:set(worldX, worldY - 3, worldZ, solidshard)
+								end
 							end
 						end
 					end
@@ -44,69 +40,70 @@ function main()
 			end
 		}
 	)
-	local ft_winter_tree = registerFeature
-    (
-        "ft_winter_tree",
-        {
-            biomes = { "vestige:winterland" },
-            dimensions = { "minecraft:overworld" },
-            count = 2,
-            chance = 0.4,
-            placement =
-            {
-                mode = "surface",
-				--min = 0,
-				--max = 0,
-                ground = { "minecraft:grass_block" }
-            },
-            place = function(world)
-                local logTile = world:block("vestige:winter_log")
-                local leafTile = world:block("vestige:winter_leaves")
-                local soilTile = world:block("minecraft:dirt")
-                if logTile <= 0 or leafTile <= 0 or soilTile <= 0 then return false end
-
-                local height = world:randomInt(7, 9)
-				local heightVariance = world:randomInt(1, 2)
-				local flatVariance = world:randomInt(1, 2)
+	local ft_pyramid = registerFeature
+	(
+		"ft_pyramid",
+		{
+			biomes = {	"vestige:borderworld_biome"	},
+			dimensions  = {	"vestige:borderworld"	},
+			count = 1,
+			chance = .075,
+			placement = {	mode = "surface",	ground = {	"vestige:sleeping_sand"	}	},
+			place = function(world)
+				local chest = world:block("minecraft:chest")
+				local sandstone = world:block("vestige:sleeping_sandstone")
+				local Height = world:randomInt(4, 10)
 				
-				for worldY = heightVariance, heightVariance + 1 do
-					for worldX = -3 - flatVariance, 3 + flatVariance do
-						for worldZ = -3 - flatVariance, 3 + flatVariance do
-							world:set(worldX, worldY, worldZ, leafTile)
+				for worldY = -3, Height do
+					radius = Height - worldY
+					for worldX = -radius, radius do
+						for worldZ = -radius, radius do
+							if radius > (worldX + worldZ + worldY) or -radius < (worldX + worldZ + worldY)  then
+								world:set(worldX, worldY, worldZ, sandstone)
+							end
 						end
 					end
 				end
+				world:set(0, Height + 1, 0, chest)
+			end
+		}
+	)
+	
+	local ft_wintertree = registerFeature
+	(
+		"ft_wintertree",
+		{
+			biomes = {	"vestige:winterland"	},
+			dimensions  = {	"minecraft:overworld"	},
+			count = 1,
+			chance = .1,
+			placement = {	mode = "surface",	ground = {	"minecraft:grass_block"	}	},
+			place = function(world)
+				local winter_leaves = world:block("vestige:winter_leaves")
+				local winter_log = world:block("vestige:winter_log")
+				local Height = world:randomInt(6, 10)
 				
-				for worldY = heightVariance + 2, heightVariance + 3 do
-					for worldX = -2 - flatVariance, 2 + flatVariance do
-						for worldZ = -2 - flatVariance, 2 + flatVariance do
-							world:set(worldX, worldY, worldZ, leafTile)
+				
+				--Generate Leaves
+				for worldY = 4, Height + 1 do
+					radius = math.floor(Height - worldY * .5)
+					for worldX = -radius, radius + 1 do
+						for worldZ = -radius, radius + 1 do
+							world:set(worldX, worldY, worldZ, winter_leaves)
 						end
 					end
 				end
-				
-				for worldY = heightVariance + 4, heightVariance + 5 do
-					for worldX = -1 - flatVariance, 1 + flatVariance do
-						for worldZ = -1 - flatVariance, 1 + flatVariance do
-							world:set(worldX, worldY, worldZ, leafTile)
+				--Generate Trunk
+				for worldY = 0, Height do
+					for worldX = 0, 1 do
+						for worldZ = 0, 1 do
+							world:set(worldX, worldY, worldZ, winter_log)
 						end
 					end
 				end
-				
-				for worldY = heightVariance + 6, height + 2 do
-					for worldX = 0 - flatVariance, flatVariance do
-						for worldZ = 0 - flatVariance, flatVariance do
-							world:set(worldX, worldY, worldZ, leafTile)
-						end
-					end
-				end
-				
-				for worldY = 0, height do
-					world:set(0, worldY, 0, logTile)
-				end
-            end
-        }
-    )
+			end
+		}
+	)
 	registerOreFeature
 	(
 		"ft_topaz_generation",
@@ -213,6 +210,19 @@ function main()
 	)
 	registerOreFeature
 	(
+		"ft_blaze_bricks_generation",
+		"vestige:blazing_brick",
+		{
+			target = "minecraft:nether_brick",
+			size = 46,
+			yMin = 48,
+			yMax = 112,
+			count = 8,
+			dimension = -1,
+		}
+	)
+	registerOreFeature
+	(
 		"ft_netherrack_iron_generation",
 		"vestige:netherrack_iron",
 		{
@@ -239,19 +249,6 @@ function main()
 	)
 	registerOreFeature
 	(
-		"ft_blaze_bricks_generation",
-		"vestige:blazing_brick",
-		{
-			target = "minecraft:nether_brick",
-			size = 46,
-			yMin = 48,
-			yMax = 112,
-			count = 8,
-			dimension = -1,
-		}
-	)
-	registerOreFeature
-	(
 		"ft_bordercrust_generation",
 		"vestige:bordercrust",
 		{
@@ -273,19 +270,6 @@ function main()
 			yMin = 80,
 			yMax = 90,
 			count = 20,
-			dimension = 5,
-		}
-	)
-	registerOreFeature
-	(
-		"ft_solidshard_generation",
-		"vestige:solidshard",
-		{
-			target = "vestige:sleeping_sand",
-			size = 25,
-			yMin = 100,
-			yMax = 112,
-			count = 2,
 			dimension = 5,
 		}
 	)
@@ -377,6 +361,19 @@ function main()
 			yMin = 1,
 			yMax = 42,
 			count = 22,
+			dimension = 5,
+		}
+	)
+	registerOreFeature
+	(
+		"ft_borderstone_bedrock_generation",
+		"vestige:borderite",
+		{
+			target = "vestige:borderstone",
+			size = 26,
+			yMin = 0,
+			yMax = 2,
+			count = 38,
 			dimension = 5,
 		}
 	)

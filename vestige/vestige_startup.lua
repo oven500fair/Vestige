@@ -152,6 +152,11 @@ function main()
 		"borderstone_emerald", "Borderstone Emerald", "res/blocks/borderworld/ores/borderstone_ore7.png",
 		BlockDefinition.new	(	{	hardness = 3,	resistance = 18,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
 	)
+	local borderite = registerBlock
+	(
+		"borderite", "Borderite", "res/blocks/borderworld/borderite.png",
+		BlockDefinition.new	(	{	hardness = -1,	resistance = 6000000,	sound = "stone",	tool = EBlockTool.Pickaxe	}	)
+	)
 	local solidshard = registerBlock
 	(
 		"solidshard", "Solidshard", "res/blocks/borderworld/solidshard.png",
@@ -629,9 +634,9 @@ function main()
 	(
 		"recipe_health_station",
 		{
-			"sis",
+			"sss",
 			"bbb",
-			"sis"
+			"iii"
 		},
 		{i = "minecraft:iron_block", s = "minecraft:iron_ingot", b = "minecraft:book", },
 		"vestige:health_station",
@@ -703,7 +708,7 @@ function main()
 		{
 			"nnn",
 			"nin",
-			"   "
+			"nnn"
 		},
 		{n = "vestige:nethervice", i = "minecraft:iron_helmet"},
 		"vestige:nethervice_helmet",
@@ -713,8 +718,8 @@ function main()
 	(
 		"recipe_nethervice_chestplate",
 		{
-			"nin",
 			"nnn",
+			"nin",
 			"nnn"
 		},
 		{n = "vestige:nethervice", i = "minecraft:iron_chestplate"},
@@ -727,7 +732,7 @@ function main()
 		{
 			"nnn",
 			"nin",
-			"n n"
+			"nnn"
 		},
 		{n = "vestige:nethervice", i = "minecraft:iron_leggings"},
 		"vestige:nethervice_leggings",
@@ -737,9 +742,9 @@ function main()
 	(
 		"recipe_nethervice_boots",
 		{
-			"   ",
+			"nnn",
 			"nin",
-			"n n"
+			"nnn"
 		},
 		{n = "vestige:nethervice", i = "minecraft:iron_boots"},
 		"vestige:nethervice_boots",
@@ -825,11 +830,11 @@ function main()
 			tallGrass = "vestige:orchid",
 			mobSpawns = 
 			{
-				{	mob = "husk",	weight = 15, min = 4, max = 8,	},
-				{	mob = "creeper",	weight = 15, min = 4, max = 8,	},
-				{	mob = "chicken",	weight = 15, min = 4, max = 8,	},
-				{	mob = "cow",	weight = 15, min = 4, max = 8,	},
-				{	mob = "pig",	weight = 15, min = 4, max = 8,	},
+				{	mob = "husk",	weight = 30, min = 4, max = 8,	},
+				{	mob = "creeper",	weight = 30, min = 4, max = 8,	},
+				{	mob = "chicken",	category = "ambient",	weight = 30, min = 4, max = 8,	},
+				{	mob = "cow",	category = "ambient",	weight = 30, min = 4, max = 8,	},
+				{	mob = "pig",	category = "ambient",	weight = 30, min = 4, max = 8,	},
 			}
 		}
 	)
@@ -851,7 +856,7 @@ function main()
 			terrain =
 			{
 				--baseDepth = 2,
-				soilDepth = 10,
+				soilDepth = 12,
 				surface = "vestige:sleeping_sand",
 				filler = "vestige:sleeping_sand",
 				stone = "vestige:borderstone",
