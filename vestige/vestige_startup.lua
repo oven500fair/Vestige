@@ -227,6 +227,11 @@ function main()
 		"spikebulb", "Spikebulb", "res/blocks/borderworld/spikebulb.png",
 		{	soil = {	"vestige:sleeping_sand",	"vestige:borderstone",	"vestige:bordercrust",	"minecraft:sand",	"minecraft:grass_block",	"minecraft:netherrack",	"minecraft:endstone",	"minecraft:veloett_grass",	"minecraft:nugrass",	}	}
 	)
+	local weeds = registerPlant
+	(
+		"weeds", "Weeds", "res/blocks/weeds.png",
+		{	soil = {	"minecraft:gravel",	"minecraft:sand",	"minecraft:grass_block",}	}
+	)
 	
 	local tier_nethervice = registerItemTier
 	(
@@ -765,9 +770,9 @@ function main()
 			rain = true,
 			temperature = .7,
 			downfall = .93,
-			size = 384,
+			size = 512,
 			scale = 1.2,
-			frequency = 5,
+			frequency = 6,
 			depth = 0.33,
 			grassCount = 2,
 			flowerCount = 1,
@@ -791,15 +796,40 @@ function main()
 			rain = true,
 			temperature = -.67,
 			downfall = .22,
-			size = 384,
+			size = 512,
 			scale = .2,
-			frequency = 55,
+			frequency = 6,
 			depth = 0.33,
 			grassCount = 1,
 			flowerCount = 0,
 			surface = "minecraft:grass_block",
 			filler = "minecraft:dirt",
 			tallGrass = "minecraft:tallgrass",
+		}
+	)
+	local gravelplains = registerBiome
+	(
+		"gravelplains",
+		{
+			name = "Gravel Plains",
+			isOverworldBiome = true,
+			grassColor = 0xBAA67F,
+			foliageColor = 0xBAA67F,
+			waterColor = 0xBAA67F,
+			skyColor = 0x08679F,
+			snow = true,
+			rain = true,
+			temperature = .82,
+			downfall = .05,
+			size = 512,
+			scale = .7,
+			frequency = 6,
+			depth = 0.33,
+			grassCount = 2,
+			flowerCount = 0,
+			surface = "minecraft:gravel",
+			filler = "minecraft:gravel",
+			tallGrass = "vestige:weeds",
 		}
 	)
 	local borderworld_biome = registerBiome
@@ -830,11 +860,14 @@ function main()
 			tallGrass = "vestige:orchid",
 			mobSpawns = 
 			{
-				{	mob = "husk",	weight = 30, min = 4, max = 8,	},
-				{	mob = "creeper",	weight = 30, min = 4, max = 8,	},
-				{	mob = "chicken",	category = "ambient",	weight = 30, min = 4, max = 8,	},
-				{	mob = "cow",	category = "ambient",	weight = 30, min = 4, max = 8,	},
-				{	mob = "pig",	category = "ambient",	weight = 30, min = 4, max = 8,	},
+				{	mob = "husk",	weight = 30, min = 4, max = 16,	},
+				{	mob = "zombice",	weight = 30, min = 4, max = 16,	},
+				{	mob = "evupul",	weight = 30, min = 1, max = 16,	},
+				{	mob = "creeper",	weight = 60, min = 1, max = 16,	},
+				{	mob = "skeleton",	weight = 60, min = 1, max = 16,	},
+				{	mob = "spider",	weight = 60, min = 1, max = 16,	},
+				{	mob = "zombie",	weight = 60, min = 1, max = 16,	},
+				{	mob = "enderman",	weight = 60, min = 1, max = 16,	},
 			}
 		}
 	)

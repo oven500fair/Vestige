@@ -1,6 +1,6 @@
 {
 	"name":	"Vestige",
-	"version":	"0.0.33",
+	"version":	"0.0.34",
 	"modId":	"vestige",
 	"clientMain":	"vestige_client.lua",
 	"serverMain":	"vestige_server.lua",

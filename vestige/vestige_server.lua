@@ -68,39 +68,109 @@ function main()
 			end
 		}
 	)
-	
 	local ft_wintertree = registerFeature
 	(
 		"ft_wintertree",
 		{
 			biomes = {	"vestige:winterland"	},
 			dimensions  = {	"minecraft:overworld"	},
-			count = 1,
-			chance = .1,
+			count = 4,
+			chance = .4,
 			placement = {	mode = "surface",	ground = {	"minecraft:grass_block"	}	},
 			place = function(world)
 				local winter_leaves = world:block("vestige:winter_leaves")
 				local winter_log = world:block("vestige:winter_log")
-				local Height = world:randomInt(6, 10)
+				local Height = world:randomInt(9, 14)
+				local LeafHeight = world:randomInt(1, 4)
+				local Thick = world:randomInt(0, 1)
+				
 				
 				
 				--Generate Leaves
-				for worldY = 4, Height + 1 do
-					radius = math.floor(Height - worldY * .5)
-					for worldX = -radius, radius + 1 do
-						for worldZ = -radius, radius + 1 do
+				for worldY = LeafHeight, Height + 4 do
+					radius = math.floor((Height - worldY) * .5) 
+					for worldX = -radius, radius + Thick do
+						for worldZ = -radius, radius + Thick do
 							world:set(worldX, worldY, worldZ, winter_leaves)
 						end
 					end
 				end
 				--Generate Trunk
-				for worldY = 0, Height do
-					for worldX = 0, 1 do
-						for worldZ = 0, 1 do
+				for worldY = 0, Height - 2 do
+					for worldX = 0, Thick do
+						for worldZ = 0, Thick do
 							world:set(worldX, worldY, worldZ, winter_log)
 						end
 					end
 				end
+			end
+		}
+	)
+	local ft_limeforest_melon = registerFeature
+	(
+		"ft_limeforest_melon",
+		{
+			biomes = {	"vestige:limeforest"	},
+			dimensions  = {	"minecraft:overworld"	},
+			count = 4,
+			chance = 1,
+			placement = {	mode = "surface",	ground = {	"minecraft:grass_block"	}	},
+			place = function(world)
+				local melon = world:block("minecraft:melon_block")
+				world:set(0, 0, 0, melon)
+			end
+		}
+	)
+	local ft_gravelplains_stump = registerFeature
+	(
+		"ft_gravelplains_stump",
+		{
+			biomes = {	"vestige:gravelplains"	},
+			dimensions  = {	"minecraft:overworld"	},
+			count = 6,
+			chance = .2,
+			placement = {	mode = "surface",	ground = {	"minecraft:gravel"	}	},
+			place = function(world)
+				local log = world:block("minecraft:oak_log")
+				local Height = world:randomInt(2, 4)
+				for worldY = 0, Height do
+					world:set(0, worldY, 0, log)
+				end
+				for worldX = -1, 1 do
+					for worldZ = -1, 1 do
+						if world:randomInt(0, 3) == 3 then
+							world:set(worldX, Height, worldZ, log)
+						end
+					end
+				end
+			end
+		}
+	)
+	local ft_apple_leaves = registerFeature
+	(
+		"ft_apple_leaves",
+		{
+			dimensions  = {	"minecraft:overworld"	},
+			count = 2,
+			chance = .5,
+			placement = {	mode = "surface",	ground = {	"minecraft:oak_leaves",	"vestige:winter_leaves"	}	},
+			place = function(world)
+				local apple_leaves = world:block("vestige:apple_leaves")
+				world:set(0, 0, 0, apple_leaves)
+			end
+		}
+	)
+	local ft_green_apple_leaves = registerFeature
+	(
+		"ft_green_apple_leaves",
+		{
+			dimensions  = {	"minecraft:overworld"	},
+			count = 4,
+			chance = 1,
+			placement = {	mode = "surface",	ground = {	"minecraft:oak_leaves",	"vestige:winter_leaves"	}	},
+			place = function(world)
+				local green_apple_leaves = world:block("vestige:green_apple_leaves")
+				world:set(0, 0, 0, green_apple_leaves)
 			end
 		}
 	)
@@ -167,32 +237,6 @@ function main()
 			yMax = 72,
 			count = 22,
 			dimension = 5,
-		}
-	)
-	registerOreFeature
-	(
-		"ft_apple_generation",
-		"vestige:apple_leaves",
-		{
-			target = "minecraft:oak_leaves",
-			size = 4,
-			yMin = 60,
-			yMax = 120,
-			count = 40,
-			dimension = 0,
-		}
-	)
-	registerOreFeature
-	(
-		"ft_apple_generation",
-		"vestige:green_apple_leaves",
-		{
-			target = "minecraft:oak_leaves",
-			size = 5,
-			yMin = 60,
-			yMax = 120,
-			count = 48,
-			dimension = 0,
 		}
 	)
 	registerOreFeature
